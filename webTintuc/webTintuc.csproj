@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DCED56D1-86E8-45D2-914F-8385EE1D4D88}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>webTintuc</RootNamespace>
+    <AssemblyName>webTintuc</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Diagnostics.DiagnosticSource">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Front\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Front\FrontAreaRegistration.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Css\bongDa.css" />
+    <Content Include="Css\Site1.css" />
+    <Content Include="Css\site2.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Img\arrow-left.png" />
+    <Content Include="Img\backgroud.jpg" />
+    <Content Include="Img\banner_hcm_02-min.png" />
+    <Content Include="Img\bongDa\arrow-left.png" />
+    <Content Include="Img\bongDa\arrow-right.png" />
+    <Content Include="Img\bongDa\bar.png" />
+    <Content Include="Img\bongDa\bar2.png" />
+    <Content Include="Img\bongDa\bg-afcCup-06.png" />
+    <Content Include="Img\bongDa\button.png" />
+    <Content Include="Img\bongDa\dau.png" />
+    <Content Include="Img\bongDa\dau2.png" />
+    <Content Include="Img\bongDa\desktop-logo-afcCup-2018-1.0.0.png" />
+    <Content Include="Img\bongDa\Flag\ando.png" />
+    <Content Include="Img\bongDa\Flag\bahrain.png" />
+    <Content Include="Img\bongDa\Flag\hanquoc.png" />
+    <Content Include="Img\bongDa\Flag\iran.png" />
+    <Content Include="Img\bongDa\Flag\jordan.png" />
+    <Content Include="Img\bongDa\Flag\Kyrgyzstan.png" />
+    <Content Include="Img\bongDa\Flag\palestine.png" />
+    <Content Include="Img\bongDa\Flag\philip.png" />
+    <Content Include="Img\bongDa\Flag\syria.png" />
+    <Content Include="Img\bongDa\Flag\thailan.png" />
+    <Content Include="Img\bongDa\Flag\trungquoc.png" />
+    <Content Include="Img\bongDa\Flag\UAE.png" />
+    <Content Include="Img\bongDa\Flag\uc.png" />
+    <Content Include="Img\bongDa\Flag\vn.png" />
+    <Content Include="Img\bongDa\Flag\yemen.png" />
+    <Content Include="Img\bongDa\logooo.png" />
+    <Content Include="Img\bongDa\soccer-versusMini.png" />
+    <Content Include="Img\chitietbaiviet\ba-cu-1.jpg" />
+    <Content Include="Img\chitietbaiviet\ba-cu-2.jpg" />
+    <Content Include="Img\chitietbaiviet\ba-cu-3.jpg" />
+    <Content Include="Img\chitietbaiviet\ba-cu-4.jpg" />
+    <Content Include="Img\chitietbaiviet\ba-cu-5.jpg" />
+    <Content Include="Img\chitietbaiviet\ba-cu.jpg" />
+    <Content Include="Img\chude\afc1.jpg" />
+    <Content Include="Img\chude\afc2.jpg" />
+    <Content Include="Img\chude\afc3.jpg" />
+    <Content Include="Img\chude\afc4.jpg" />
+    <Content Include="Img\chude\khungbo.jpg" />
+    <Content Include="Img\chude\khungbo1.gif" />
+    <Content Include="Img\chude\khungbo2.jpg" />
+    <Content Include="Img\chude\khungbo3.jpg" />
+    <Content Include="Img\chude\my.jpg" />
+    <Content Include="Img\chude\my1.jpg" />
+    <Content Include="Img\chude\my2.jpg" />
+    <Content Include="Img\chude\my3.jpg" />
+    <Content Include="Img\chude\thamnhung.jpg" />
+    <Content Include="Img\chude\thamnhung1.jpg" />
+    <Content Include="Img\chude\thamnhung2.jpg" />
+    <Content Include="Img\chude\thamnhung3.jpg" />
+    <Content Include="Img\chude\tt1.jpg" />
+    <Content Include="Img\chude\tt2.jpg" />
+    <Content Include="Img\chude\tt3.jpg" />
+    <Content Include="Img\chude\tt4.jpg" />
+    <Content Include="Img\logo.png" />
+    <Content Include="Img\logo1.png" />
+    <Content Include="Img\logo2.png" />
+    <Content Include="Img\menu-left\chuyenmuc.png" />
+    <Content Include="Img\menu-left\chuyenmuc2.png" />
+    <Content Include="Img\menu-left\soccer-ball-variant.png" />
+    <Content Include="Img\menu-left\soccer-ball-variant2.png" />
+    <Content Include="Img\menu-left\upload-button.png" />
+    <Content Include="Img\menu-left\upload-button2.png" />
+    <Content Include="Img\menu-left\video.png" />
+    <Content Include="Img\menu-left\video2.png" />
+    <Content Include="Img\menu\home1.png" />
+    <Content Include="Img\menu\home2.png" />
+    <Content Include="Img\new\290369ea27abcef597ba.jpg" />
+    <Content Include="Img\new\541aff57b2165b480207.jpg" />
+    <Content Include="Img\new\93b815bf58feb1a0e8ef.jpg" />
+    <Content Include="Img\new\benhvetim.jpg" />
+    <Content Include="Img\new\congnghe\cac-nha-khoa-hoc-trung-quoc-bien-doi-dong-thanh-vat-lieu-giong-nhu-vang.jpg" />
+    <Content Include="Img\new\congnghe\han-che-su-tan-cong-cua-hacker-thong-qua-trinh-duyet-web.png" />
+    <Content Include="Img\new\congnghe\iphone-xr-giup-apple-thu-hut-nhieu-khach-hang-android.jpg" />
+    <Content Include="Img\new\congnghe\nhung-that-bai-cong-nghe-nam-2018.jpg" />
+    <Content Include="Img\new\congnghe\smartphone-nam-2019-cua-samsung-se-khong-co-loa-thoai.jpg" />
+    <Content Include="Img\new\f9f4e34dbe0c57520e1d.jpg" />
+    <Content Include="Img\new\hanh-xu-kieu-bat-can-doi-bom-tan-tu-choi-bat-tay-hlv-arsenal.jpg" />
+    <Content Include="Img\new\hinhanh.jpg" />
+    <Content Include="Img\new\hlv-queiroz-viet-tam-thu-xuc-dong-keu-goi-truyen-thong-iran-dinh-chien-truoc-them-asian-cup.jpg" />
+    <Content Include="Img\new\moingay.jpg" />
+    <Content Include="Img\new\mu-nham-m-allegri-cho-ghe-hlv-truong.jpg" />
+    <Content Include="Img\new\noi-bo-dt-iraq-mau-thuan-lon-truoc-tran-ra-quan-gap-viet-nam.jpg" />
+    <Content Include="Img\new\ondinh.png" />
+    <Content Include="Img\new\right\bikip.jpg" />
+    <Content Include="Img\new\right\no.jpg" />
+    <Content Include="Img\new\right\thoitiet.jpg" />
+    <Content Include="Img\new\right\tiendat.jpg" />
+    <Content Include="Img\new\right\tuvog.jpg" />
+    <Content Include="Img\new\sukien1.jpg" />
+    <Content Include="Img\new\sukien2.jpg" />
+    <Content Include="Img\new\sukien3.jpg" />
+    <Content Include="Img\new\sukien4.jpg" />
+    <Content Include="Img\new\thcs.jpg" />
+    <Content Include="Img\new\tin1.jpg" />
+    <Content Include="Img\new\tin2.jpg" />
+    <Content Include="Img\new\tin3.jpg" />
+    <Content Include="Img\new\tongbithu.png" />
+    <Content Include="Img\new\trung-quoc-doi-bong-gia-nhat-o-asian-cup-2019.jpg" />
+    <Content Include="Img\new\tuocgiayphep.jpg" />
+    <Content Include="Img\searching-magnifying-glass.png" />
+    <Content Include="Img\video\video1.jpg" />
+    <Content Include="Img\video\video10.jpg" />
+    <Content Include="Img\video\video11.jpg" />
+    <Content Include="Img\video\video12.jpg" />
+    <Content Include="Img\video\video13.jpg" />
+    <Content Include="Img\video\video14.jpg" />
+    <Content Include="Img\video\video15.jpg" />
+    <Content Include="Img\video\video4.jpg" />
+    <Content Include="Img\video\video5.jpg" />
+    <Content Include="Img\video\video6.jpg" />
+    <Content Include="Img\video\video7.jpg" />
+    <Content Include="Img\video\video8.jpg" />
+    <Content Include="Img\video\video9.jpg" />
+    <Content Include="Img\video\videothieu.jpg" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\Front\Views\web.config" />
+    <Content Include="Areas\Front\Views\Shared\Layout.cshtml" />
+    <Content Include="Areas\Front\Views\Home\Index.cshtml" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Front\Models\" />
+    <Folder Include="Models\" />
+    <Folder Include="Views\Default\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50256</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50256/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

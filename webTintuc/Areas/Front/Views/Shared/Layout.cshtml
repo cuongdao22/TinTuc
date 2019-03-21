@@ -1,0 +1,161 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>News</title>
+    <script src="Script/jquery-3.3.1.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="~/Css/bongDa.css" rel="stylesheet" />
+    <link href="~/Css/Site1.css" rel="stylesheet" />
+    <link href="~/Css/site2.css" rel="stylesheet" />
+
+    <script src="Script/menu.js"></script>
+</head>
+
+<body>
+
+    <div>
+        <form id="form1" runat="server">
+
+            <div class="head">
+                <div class="logo">
+                    <a href="#"><img class="logo-ico" src="~/Img/logo1.png" /></a>
+                    <div class="search">
+                        <input type="text" placeholder="Nhập nội dung tìm kiếm">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                        <a class="login login1 dangnhap" href="#">Đăng nhập</a>
+                        <a class="login">|</a>
+                        <a class="login dangki" href="#">Đăng kí</a>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class=" body">
+
+
+                @RenderBody()
+
+
+                <!-- righttttttt  -->
+                <div class="main-filter">
+                    <a href="WebChuDe.aspx" class="popular is-active1">
+                        <i class="spr chuyemmuc"></i>
+                        <span>Chủ đề</span>
+                    </a>
+                    <a href="WebVideo.aspx" class="popular is-active2">
+                        <i class="spr video"></i>
+                        <span>Video</span>
+                    </a>
+                    <a href="BongDa.aspx" class="popular is-active3">
+                        <i class="spr bongda"></i>
+                        <span>Bóng đá</span>
+                    </a>
+                    <a onclick="home(0);" class="popular is-active4">
+                        <i class="spr len"></i>
+                        <span>Lên trên</span>
+                    </a>
+                </div>
+                <!-- righttttttt  -->
+            </div>
+            <div class="bottom">
+                <div class="logo logo2">
+                    <a href="#"><img class="logo-ico" src="~/Img/logo2.png" /></a>
+                    <div class="search2">
+
+                        <a class="login login1 dangnhap" href="LienHeQuangCao.aspx">Liên hệ quảng cáo</a>
+                        <a class="login">|</a>
+                        <a class="login dangki" href="GioiThieu.aspx">Giới thiệu</a>
+                    </div>
+
+
+                </div>
+            </div>
+        </form>
+        <div class="menu-bar">
+            <div class="menu">
+                <ol class="ol-menu" style="list-style-type:none;display:inline;margin:0px;padding:0px;">
+
+                    <li class="li lii"><i class="fa fa-search iconhome" onclick="chao();"></i></li>
+                    <li class="li">
+                        <a style="margin-left: -18px;" href="#"> XÃ HỘI</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">THỜI SỰ</a></li>
+                            <li><a href="#">GIAO THÔNG</a></li>
+                            <li><a href="#">MÔI TRƯỜNG-KHÍ HẬU</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="li"><a href="#"> THẾ GIỚI</a></li>
+                    <li class="li">
+                        <a href="#"> VĂN HÓA</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">NGHỆ THUẬT</a></li>
+                            <li><a href="#">ẨM THỰC</a></li>
+                            <li><a href="#">DU LỊCH</a></li>
+                        </ul>
+                    </li>
+                    <li class="li">
+                        <a href="#"> KINH TẾ</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">KINH DOANH</a></li>
+                            <li><a href="#">LAO ĐỘNG</a></li>
+                            <li><a href="#">TÀI CHÍNH</a></li>
+                            <li><a href="#">CHỨNG KHOÁN</a></li>
+                        </ul>
+                    </li>
+                    <li class="li">
+                        <a href="#"> GIÁO DỤC</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">HỌC BỔNG-DU HỌC</a></li>
+                            <li><a href="#">ĐÀO TẠO-THI CỬ</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="li">
+                        <a href="#"> THỂ THAO</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">TRONG NƯỚC</a></li>
+                            <li><a href="#">QUỐC TẾ</a></li>
+                        </ul>
+                    </li>
+                    <li class="li">
+                        <a href="#"> GIẢI TRÍ</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">ÂM NHẠC</a></li>
+                            <li><a href="#">THỜI TRANG</a></li>
+                            <li><a href="#">TRUYỀN HÌNH</a></li>
+                        </ul>
+                    </li>
+                    <li class="li">
+                        <a href="#"> PHÁP LUẬT</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">HÌNH SỰ-DÂN SỰ</a></li>
+                            <li><a href="#">AN NINH</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="li">
+                        <a href="#"> CÔNG NGHỆ</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">C</a></li>
+                            <li><a href="#">T</a></li>
+                            <li><a href="#">T</a></li>
+                        </ul>
+                    </li>
+                    <li class="li"><a href="#"> KHOA HỌC</a></li>
+                    <li class="li"><a href="#"> ĐỜI SỐNG</a></li>
+                    <li class="li"><a href="#"> XE CỘ</a></li>
+                    <li class="li"><a href="#"> NHÀ ĐẤT</a></li>
+
+                </ol>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,692 @@
+﻿body {
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer */
+  
+    -webkit-user-select: none; /* Chrome, Safari, and Opera */
+    -webkit-touch-callout: none; /* Disable Android and iOS callouts*/
+}
+.bodyOfBong {
+    width: 55%;
+    height: 1940px;
+    margin: auto;
+    margin-top: 70px;
+}
+.slide {
+    width: 100%;
+    margin: 0 auto;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+    background-color:white;
+}
+
+.chuyen-slide {
+    width: 9000px;
+    transition: all 0.5s;
+}
+
+.dieu-huong {
+    position: absolute;
+    top: 30%;
+    width: 100%;
+}
+
+    
+
+.img {
+    width: 1366px;
+    height: 400px;
+    float: left;
+}
+.divslide {
+    float: left;
+    width: 200px;
+    height: 100px;
+    background-color: pink;
+    margin-right: 2px;
+}
+.chuyen-slide {
+    height: auto;
+}
+#left, #right {
+    width: 10px;
+    height: 19px;
+    padding-top: 3px;
+    position: absolute;
+    top: 10px;
+}
+#right{
+    left:10px;
+}
+.leftA, .leftB {
+    position: relative;
+    background-color: rgba(128, 128, 128, 0.55);
+    width: 20px;
+    height: 45px;
+    cursor: pointer;
+}
+.leftA {
+    float: left;
+    border-bottom-right-radius: 45px; /* 100px of height + 10px of border */
+    border-top-right-radius: 45px;
+    
+}
+.leftB {
+    float: right;
+    
+    border-top-left-radius: 43px;
+    border-bottom-left-radius: 43px;
+}
+.leftA:hover,.leftB:hover{
+    background-color: rgba(128, 128, 128, 0.85);
+}
+
+.divslide {
+    background-image: url('../Img/bongDa/soccer-versusMini.png');
+    background-size: 100% 100%;
+    background-color: #efefef;
+}
+
+.titleSoccer {
+    height: 20px;
+    width: 100%;
+    background: #18555F;
+    font-size: 12px;
+    color: white;
+    position: relative;
+}
+
+    .titleSoccer span, time {
+        margin: 0;
+        padding: 0;
+        position: absolute;
+    }
+    .titleSoccer span {
+        left: 111px;
+        top: 3px;
+    }
+    .titleSoccer time {
+        top: 3px;
+        left: 4px;
+        float: left;
+    }
+
+.titleSoccer2 {
+    width: 100%;
+    
+    height: 47px;
+    margin-top: 16px;
+    position:relative;
+    font-size:12px;
+}
+.titleSoccer2 img{
+    width:16%;
+    top:6px;   
+    position:absolute;
+}
+    .titleSoccer2 > span {
+        top: 32px;
+        position: absolute;
+    }
+
+.score {
+    padding-top: 17px;
+    font-size: 15px;
+    text-align: center;
+  font-weight:bold;
+}
+.flag1 {
+    left: 22px;
+}
+.flag2 {
+    top: 20px;
+    left: 12px;
+}
+.flag3 {
+    
+}
+.flag4 {
+    top: 20px;
+    left: 150px;
+}
+.flag3 {
+    left: 145px;
+}
+.bodybong2 {
+    width: 100%;
+    height: 60px;
+    background: #082A30 url('../Img/bongDa/bar2.png')calc(45% - 110px) top no-repeat;
+    background-size: 319px 60px;
+}
+.logoball {
+    margin-top: 5px;
+    margin-left: 8px;
+    border: 1px solid #ffffff4a;
+}
+.bodybong3 {
+    width: 100%;
+    height: auto;
+    
+    margin-top: 26px;
+}
+.bodybong31, .bodybong32, .bodybong33 {
+    height: 800px;
+    color: white;
+    
+    background: white;
+  
+}
+.bodybong31{
+    width:200px;
+    float:left;
+}
+.bodybong32 {
+    width: 500px;
+    float: left;
+    margin-left: 18px;
+}
+.bodybong33 {
+    width: 309px;
+    float: right;
+}
+.team {
+    height: 40px;
+    width: 90%;
+    margin: auto;
+    position: relative;
+    cursor: pointer;
+    border-bottom: 1px solid #d8d8d8;
+    margin-bottom: 5px;
+}
+.team:hover{
+    background:rgba(242, 242, 242, 0.56);
+}
+.team img{
+    float: left;
+    margin-top: 10px;
+    margin-left: 0px;
+    width: 17%;
+}
+.team p{
+    margin: 0;
+    width: auto;
+    float: left;
+    margin-top: 14px;
+    margin-left: 13px;
+    font-size: 11px;
+    font-weight: bold;
+}
+.bodybong32 {
+    background: url(../Img/bongDa/bg-afcCup-06.png) calc(45% - 51px) no-repeat;
+    background-size: 177% 100%;
+    padding-top:0px;
+   
+ 
+}
+.bodybong32 div{
+    width:480px;
+}
+.titlebong32{
+    height:26px;
+    background:#5694f5;
+    margin:auto;
+}
+    .titlebong32 span {
+        font-weight: 700;
+        font-style: normal;
+        font-family: inherit;
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 14px;
+        height: 26px !important;
+        display: inline-block;
+    }
+
+.time-title {
+    z-index: 10;
+    margin: auto;
+    margin-top: 10px;
+    background: rgba(0, 134, 220, 0.5) url(https://baomoi-static.zadn.vn/soccer/style/img/soccer/afcCup/pattern_nav.png) 0 0 repeat-x;
+}
+    .time-title span {
+        margin-left: 13px;
+        height: 26px;
+        display: inline-block;
+        font-size: 12px;
+        line-height: 26px;
+        font-weight: 700;
+        font-style: normal;
+        font-family: inherit;
+        color: #fff;
+        text-transform: uppercase;
+    }
+.lichdau {
+    height: 76px;
+    background:rgba(255, 255, 255, 0.43);
+
+    border: 1px solid rgba(0, 79, 159, 0.5);
+    margin: auto;
+    width: 478px !important;
+    border-radius: 3px;
+    margin-top:10px;
+    position:relative;
+    cursor:pointer;
+
+}
+    .lichdau:hover {
+        background-image: linear-gradient(90deg, rgba(0, 78, 160, 0.3) 0%, rgba(0, 213, 255, 0.3) 100%);
+    }
+.lichdau:hover span {
+    color:#0086DC;
+
+}
+
+    .lichdau span {
+        position: absolute;
+        color: black;
+        font-weight: 500;
+        font-size: 13px;
+        font-family: inherit;
+    }
+.number {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 3px 10px;
+    border-radius: 3px 0 3px;
+    border: 1px solid rgba(0, 79, 159, 0.5);
+    border-top: none;
+    border-left: none;
+    font-size: 13px;
+    line-height: 20px;
+    color: black;
+    font-weight: 400;
+    font-family: inherit;
+}
+.number2 {
+    position: absolute;
+    font-size: 13px;
+    line-height: 20px;
+    color: black;
+    font-weight: 400;
+    font-family: inherit;
+    top: 11px;
+    left: 223px;
+}
+.lichdau img {
+    position: absolute;
+
+    width: 6%;
+    top:40px;
+}
+.theTeam {
+    top: 43px;
+}
+.flagteam1 {
+    left: 182px;
+}
+.flagteam2 {
+    left: 282px;
+}
+.theTeam1 {
+    left: 146px;
+}
+.theTeam2 {
+    left: 318px;
+}
+.gio {
+    left: 230px;
+}
+.rightbodyBall {
+    width: 100% !important;
+    background: red;
+}
+.uae {
+    left:25px;
+}
+.Ba {
+    left: 142px;
+}
+.hanquoc {
+    left: 116px;
+}
+.thailan {
+    left: 124px;
+}
+.trungquoc {
+    left: 108px;
+}
+.xemthem{
+    height:30px;
+}
+.xemthem span{
+    position:absolute;
+    top:8px;
+    left:188px;
+}
+
+
+
+
+.lichthidau {
+    float: right;
+    cursor: pointer;
+    position: relative;
+    width: 100px;
+    margin-top: 6px;
+    margin-right: 114px;
+    height: 50px;
+}
+.lichthidau img{
+    width:20%;
+    position:absolute;
+    top: 4px;
+    left: 41px;
+}
+.lichthidau span{
+    color:white;
+    position:absolute;
+    font-size:12px;
+    top: 30px;
+    left: 23px;
+}
+.lichthidau:hover{
+    background-color:rgba(255, 255, 255, 0.64);
+        border-radius: 5px;
+
+}
+.lichthidau2 {
+    margin-right: -204px;
+}
+.lichthidau2 img{
+    width: 30%;
+
+    top: 4px;
+    left: 34px;
+}
+
+.bangdau {
+    width: 480px;
+    height: 46px;
+    border-bottom: 1px solid rgba(0, 134, 220, 0.3);
+    margin:auto
+}
+.colunm {
+    height: 46px;
+    width: 30px !important;
+    float: right;
+    color: #777;
+    font-size: 16px;
+    text-align: center;
+    line-height: 53px;
+}
+.colunm2 {
+    height: 46px;
+    width: 100px !important;
+    float: left;
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 16px;
+    
+    font-weight:bold;
+    line-height: 53px;
+}
+.colunm3 {
+    color: #777;
+    font-weight: 100;
+}
+.bangdau:hover {
+    background: linear-gradient(90deg, rgba(0, 78, 160, 0.3) 0%, rgba(0, 213, 255, 0.3) 100%);
+    cursor: pointer;
+}
+.xemthem2{
+    left:210px!important;
+}
+#bangdau {
+    width: 100%;
+    background: white;
+    padding-bottom: 32px;
+}
+
+/* --------------------------------------------Quảng cáo*/
+/*-Liên hệ quảng cáo -->*/
+
+.quangcao {
+    width: 55%;
+    height: 692px;
+    margin:auto;
+    margin-top:70px;
+
+}
+
+.quangcaoR {
+    width: 30%;
+    height: 700px;
+
+    float: right;
+}
+.quangcaoL {
+    width: 67%;
+    height: auto;
+    border-right:1px solid #666;
+    float: left;
+}
+.input1 {
+    margin-top: 14px;
+    width: 100%;
+    height: 220px;
+}
+.input1L, .input1R {
+    width: 49%;
+    height: 100%;
+    
+   
+}
+.input1L {
+    float:left;
+}
+.input1R {
+    float: right;
+}
+.input1 span{
+    margin:0;
+    font-size:15px;
+    margin-right:5px;
+}
+.input1 input {
+    margin-top: 4px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-bottom:20px;
+    margin-right:50px;
+}
+.sao{
+    color:red;
+}
+.fCategory {
+    margin-top: 4px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin-bottom: 20px;
+    width: 338px;
+}
+#noidung{
+    resize:vertical;
+    width:690px;
+    height:400px;
+    max-height:200px;
+}
+.noidung {
+    font-size: 15px;
+}
+.buttonsend {
+    display: block;
+    position: relative;
+    float: right;
+    padding-right: 2px;
+    width: 120px;
+    padding: 0;
+    margin: 10px 5px 10px 0;
+    font-weight: 600;
+    text-align: center;
+    line-height: 50px;
+    color: #FFF;
+    border-radius: 5px;
+    transition: all 0.2s;
+    background: #2FA1B3;
+}
+.buttonsend:hover {
+    background: #2b93a4;
+}
+.mienbac {
+    width: 100%;
+    position: relative;
+    height: 37px;
+    padding-top: 9px;
+}
+.mienbac span{
+    font-size:15px;
+    background: white;
+    margin:0;
+    position:absolute;
+    font-weight:bold;
+    margin-top: 3px;
+    padding-right: 10px;
+}
+.mienbac div{
+    width:100%;
+    position: absolute;
+    height:1px;
+    background:#e2e2e3;
+    margin-top:12px;
+}
+
+/* --------------------------------------------Quản lí*/
+.quanli {
+    width: 55%;
+    height: 687px;
+    margin: auto;
+    margin-top: 75px;
+}
+.danhsach {
+    overflow-y: scroll;
+    height: 900px;
+    max-height: 500px;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+
+}
+.baiviet {
+    width: 100%;
+    
+    background: #efefef;
+    margin-bottom: 2px;
+    overflow: auto;
+}
+.baiviet:hover{
+    cursor:pointer;
+    background: #dedede;
+}
+.baiviet span{
+    margin-top:14px;
+    float:left;
+    font-size:14px;
+    padding-bottom: 14px;
+}
+.le {
+    background: #f9f9f9;
+}
+.chan {
+    background: white;
+}
+.tatca {
+    width: 100%;
+    padding-bottom: 9px;
+}
+.tatca a{
+    font-size:14px;
+    color: #0073aa;
+}
+.tatca a:first-child{
+    color: #000!important;
+    font-weight:bold;
+}
+.tatca2{
+    width:100%;
+    height:50px;
+}
+.fCategory2 {
+    float:left;
+    margin-top: 4px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin-bottom: 10px;
+    width: 130px;
+    font-size:14px;
+}
+.fCategory3 {
+    float: left;
+    margin-top: 4px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin-bottom: 10px;
+    width: 170px;
+    font-size: 14px;
+    margin-left:15px;
+}
+.button2 {
+    display: block;
+    position: relative;
+    float: left;
+    padding: 0;
+    margin: 0;
+    font-weight: 600;
+    text-align: center;
+    line-height: 23px;
+    margin-top: 4px;
+    border-color: #999;
+    border-radius: 3px;
+    transition: all 0.2s;
+    font-size: 13px;
+    color: #555;
+    border:1px solid;
+    border-color: #ccc;
+    background: #f7f7f7;
+    box-shadow: 0 1px 0 #ccc;
+}
+.apdung {
+    width: 90px;
+    margin-left:10px;
+}
+.loc {
+    width: 50px;
+    margin-left: 10px;
+}
+.themmoi {
+    width: 90px;
+    float:right;
+}
+.tieude {
+    width: 1054px;
+    height: 30px;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+}
+.tieude span{
+    font-size: 14px;
+    margin:0px;
+    float:left;
+    
+    margin-top:8px;
+}
+.cot1{
+    color: #00a0d2;
+}
+.cot1{
+    padding-left:10px;
+    width:417px;
+}
+.cot2,.cot3,.cot4 {
+    width: 200px;
+}

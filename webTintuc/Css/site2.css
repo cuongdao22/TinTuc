@@ -1,0 +1,436 @@
+﻿body {
+}
+.bodyof2 {
+    width: 55%;
+    height: 3668px;
+    margin: auto;
+    margin-top: 68px;
+}
+.leftbody2 {
+    width: 67%;
+    height: 100%;
+    float: left;
+    padding-right: 10px;
+    padding-left: 5px;
+    /*border-right: 1px solid rgba(0, 0, 0, 0.14);*/
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+
+}
+.title2 {
+    margin-top: 0;
+    font-size: 18px;
+    line-height: 25px;
+    line-height: 2.5rem;
+    font-style: normal;
+    font-family: inherit;
+    background: rgba(47, 161, 179, 0.16);
+    font-weight: 700;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    border-left: 5px solid #2FA1B3;
+}
+.undertitle {
+    color: #2FA1B3;
+    margin-top: 15px;
+}
+.title2 a {
+    color: #2FA1B3;
+}
+.timeDiv {
+    width: 100%;
+    height: 27px;
+    border-top: 1px dashed #ccc;
+    border-bottom: 1px dashed #ccc;
+    padding: 9px 0px 7px 0px;
+    text-align: right;
+    line-height: 26px;
+    color: #999;
+    font-size: 12px;
+}
+.ptitle{
+    font-weight:bold;
+}
+.leftbody2 img{
+    width:70%;
+    text-align:center;
+}
+.divimg {
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+.kyten {
+    float: right;
+    margin-top: 71px;
+    font-weight: bold;
+}
+
+/* --------------------------------------------------------------------------------------------------SITE 3---------------------------------------------*/
+
+.bodyof3 {
+    width: 55%;
+    height: 2074px;
+    margin: auto;
+    margin-top: 68px;
+}
+.chungheight {
+    height: 100%;
+   
+}
+.bodyof3-l {
+    width: 65%;
+    float: left;
+}
+.bodyof3-r {
+   
+    float: right;
+}
+.tieudeOfchude {
+    width: 100%;
+    height: 61px;
+    font-size: 25px;
+    border-bottom: 2px solid #2FA1B3;
+    color: #2FA1B3;
+    line-height: 72px;
+}
+    .tieudeOfchude a {
+        color: #2FA1B3;
+    }
+    .tieudeOfchude a:hover {
+        color: #000000;
+    }
+
+.itemchude {
+    width: 100%;
+
+    height: 327px;
+    margin-top: 10px;
+}
+.itemchudeL, .itemchudeR {
+    
+    height: 100%;
+    
+    overflow: hidden;
+}
+.itemchudeL {
+    float: left;
+    width: 47%;
+}
+.itemchudeR {
+    float: right;
+    width: 50%;
+    padding-left: 5px;
+}
+
+.itemchudeL img {
+    width: 100%;
+    height: 59%;
+
+}
+.itemchude img {
+    border-radius: 7px;
+    
+    transition: .4s ease-in-out;
+}
+.itemchude p:hover {
+    cursor: pointer;
+    color: #2FA1B3;
+
+}
+.itemchude img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.itemchudeL p {
+    margin-top: 10px;
+    padding-top: 10px;
+    color: rgba(0, 0, 0, 0.72);
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+.itemchude a{
+    font-size:12px;
+}
+.itemchudeR p {
+    color: rgba(0, 0, 0, 0.72);
+    margin: 0;
+    margin-top: 0px;
+    font-size: 13px;
+    font-weight: bold;
+    padding-left: 75px;
+}
+.itemchudeR img {
+    float:left;
+    width: 20%;
+    height: 20%;
+}
+.itemchudeR div {
+    margin-left:10px;
+    margin-top:10px;
+    padding-left:10px;
+    padding-bottom:20px;
+}
+    .itemchudeR div a:first-child {
+        margin-left: 10px;
+    }
+
+
+/* --------------------------------------------------------------------------------------------------SITE VIDEO---------------------------------------------*/
+
+.videopage {
+    width: 55%;
+    height: 1817px;
+    margin: auto;
+    margin-top: 68px;
+}
+.videol {
+    width: 68%;
+    height:100%;
+    float:left;
+  
+}
+.divVideo {
+  
+    width: 204px;
+    height: 268px;
+    float: left;
+    margin-bottom: 13px;
+    overflow:hidden;
+}
+.videol>div{
+    margin-left:7%;
+}
+.divVideoFirst {
+    margin-left: 0!important;
+}
+
+.divVideo img {
+    width: 100%;
+    height: 52%;
+    border-radius: 8px;
+    transition: .4s ease-in-out;
+}
+    .divVideo img:hover {
+        transform: scale(1.1);
+    }
+.divVideo a:hover {
+    color: #2FA1B3;
+}
+.divVideo a {
+    font-size: 16px;
+    line-height: 25px;
+    font-weight: bold;
+    font-style: normal;
+    font-family: inherit;
+
+} 
+.divVideo .story__meta a{
+    font-size:13px;
+}
+a.button {
+    display: block;
+    position: relative;
+    float: left;
+    width: 100%;
+    padding: 0;
+    margin: 10px 20px 10px 0;
+    font-weight: 600;
+    text-align: center;
+    line-height: 50px;
+    color: #FFF;
+    border-radius: 5px;
+    transition: all 0.2s;
+}
+.btnBlueGreen {
+    background: #2FA1B3;
+}
+.btnFade.btnBlueGreen:hover {
+    background: #2a8998;
+}
+
+
+/* --------------------------------------------------------------------------------------------------SITE VIDEO chi tiết---------------------------------------------*/
+
+.bodyCTVideo {
+    width: 55%;
+    height: 1500px;
+    margin: auto;
+    margin-top: 69px;
+}
+.bodyCTVideoL {
+    width: 100%;
+    height: 50%;
+    float: left;
+}
+.vid-main-wrapper {
+    width: 100%;
+    max-width: 1100px;
+    min-width: 440px;
+    background: #fff;
+    margin: 0 auto;
+}
+
+
+/*  VIDEO PLAYER CONTAINER
+ 		############################### */
+.vid-container {
+    position: relative;
+    padding-bottom: 43%;
+    padding-top: 30px;
+    height: 0;
+    width: 70%;
+    float: left;
+}
+
+    .vid-container iframe,
+    .vid-container object,
+    .vid-container embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 480px
+    }
+
+
+/*  VIDEOS PLAYLIST 
+ 		############################### */
+.vid-list-container {
+    width: 30%;
+    height: 480px;
+    overflow: hidden;
+    float: right;
+}
+
+    .vid-list-container:hover, .vid-list-container:focus {
+        overflow-y: auto;
+    }
+
+ol#vid-list {
+    margin: 0;
+    padding: 0;
+    background: #222;
+}
+
+    ol#vid-list li {
+        list-style: none;
+    }
+
+        ol#vid-list li a {
+            text-decoration: none;
+            background-color: #222;
+            height: 55px;
+            display: block;
+            padding: 10px;
+        }
+
+            ol#vid-list li a:hover {
+                background-color: #666666
+            }
+
+.vid-thumb {
+    float: left;
+    margin-right: 8px;
+}
+
+.active-vid {
+    background: #3A3A3A;
+}
+
+#vid-list .desc {
+    color: #CACACA;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+
+@media (max-width: 624px) {
+    body {
+        margin: 15px;
+    }
+
+    .caption {
+        margin-top: 40px;
+    }
+
+    .vid-list-container {
+        padding-bottom: 20px;
+    }
+}
+
+#titleVideo {
+    float: left;
+    font-size: 35px;
+    width: 100%;
+}
+.bodyCTVideoR{
+    width:100%;
+}
+.video1-ct {
+    width: 100%!important;
+}
+.bodyCTVideoR div:not(:first-child) {
+    margin-left: 76px;
+}
+.vid-thumb img{
+    margin-top:7px;
+
+}
+
+/* --------------------------------------------------------------------------------------------------SITE VIDEO giới thiệu---------------------------------------------*/
+.gioithieu {
+    width: 55%;
+    height: 1165px;
+    margin: auto;
+    margin-top: 70px;
+    margin-bottom: 100px;
+}
+.gioithieuct {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /*background-image: linear-gradient(to bottom right, red, yellow);*/
+    background-image: url('../Img/backgroud.jpg') ;
+    background-size:100% 100%;
+}
+.togioithieu {
+    margin: auto;
+    position: absolute;
+    background: white;
+    width: 70%;
+    height: 888px;
+    top: 96px;
+    font-size: 17px;
+
+    border-radius: 9px;
+    padding: 40px 70px;
+    border: 1px solid #ccc;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+.help__title {
+    font-size: 20px;
+    font-size: 2rem;
+    clear: both;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    color: #118A98;
+    text-align: center;
+    font-weight: 700;
+}
+.detail li{
+    margin-bottom:13px;
+}
+.main_ct img:hover {
+    transform: scale(1.1);
+}
+.main_ct img {
+    transition: .4s ease-in-out;
+}
+.m_left{
+    overflow:hidden;
+}
