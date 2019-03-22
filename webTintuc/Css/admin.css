@@ -1,0 +1,14 @@
+﻿body {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+}
+.ADbody {
+    background: #fff;
+    width: 80%;
+    height: 2000px;
+    margin-left: 340px;
+    margin-top: 62px;
+}
+.baiviettitle {
+    font-size: 37px;
+    font-weight: 400;
+}

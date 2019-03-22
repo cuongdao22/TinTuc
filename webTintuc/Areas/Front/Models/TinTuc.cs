@@ -13,18 +13,18 @@ namespace webTintuc.Areas.Front.Models
         private string NoiDung;
         private DateTime NgayDang;
         private DateTime NgayTao;
-        private string HienThi;
+        private Boolean HienThi;
         private string TuKhoa;
         private int DanhMuc;
         private string Anh;
         private string MetaTitle;
         private string TacGia;
-        private bool Hot;
+        private Boolean Hot;
         public TinTuc()
         {
 
         }
-        public TinTuc(int id, string tieuDe, string tag, string noiDung, DateTime ngayDang, DateTime ngayTao, string hienThi, string tuKhoa, int danhMuc, string anh, string metaTitle, string tacGia, bool hot)
+        public TinTuc(int id, string tieuDe, string tag, string noiDung, DateTime ngayDang, DateTime ngayTao, Boolean hienThi, string tuKhoa, int danhMuc, string anh, string metaTitle, string tacGia, Boolean hot)
         {
             Id = id;
             TieuDe = tieuDe;
@@ -47,12 +47,13 @@ namespace webTintuc.Areas.Front.Models
         public string NoiDung1 { get => NoiDung; set => NoiDung = value; }
         public DateTime NgayDang1 { get => NgayDang; set => NgayDang = value; }
         public DateTime NgayTao1 { get => NgayTao; set => NgayTao = value; }
-        public string HienThi1 { get => HienThi; set => HienThi = value; }
+        public Boolean HienThi1 { get => HienThi; set => HienThi = value; }
         public string TuKhoa1 { get => TuKhoa; set => TuKhoa = value; }
         public int DanhMuc1 { get => DanhMuc; set => DanhMuc = value; }
         public string Anh1 { get => Anh; set => Anh = value; }
         public string MetaTitle1 { get => MetaTitle; set => MetaTitle = value; }
         public string TacGia1 { get => TacGia; set => TacGia = value; }
-        public bool Hot1 { get => Hot; set => Hot = value; }
+        public Boolean Hot1 { get => Hot; set => Hot = value; }
+
     }
 }
