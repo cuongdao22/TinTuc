@@ -15,7 +15,7 @@ namespace webTintuc.Areas.Front.Models
         private DateTime NgayTao;
         private string HienThi;
         private string TuKhoa;
-        private string DanhMuc;
+        private int DanhMuc;
         private string Anh;
         private string MetaTitle;
         private string TacGia;
@@ -49,7 +49,7 @@ namespace webTintuc.Areas.Front.Models
         public DateTime NgayTao1 { get => NgayTao; set => NgayTao = value; }
         public string HienThi1 { get => HienThi; set => HienThi = value; }
         public string TuKhoa1 { get => TuKhoa; set => TuKhoa = value; }
-        public string DanhMuc1 { get => DanhMuc; set => DanhMuc = value; }
+        public int DanhMuc1 { get => DanhMuc; set => DanhMuc = value; }
         public string Anh1 { get => Anh; set => Anh = value; }
         public string MetaTitle1 { get => MetaTitle; set => MetaTitle = value; }
         public string TacGia1 { get => TacGia; set => TacGia = value; }
