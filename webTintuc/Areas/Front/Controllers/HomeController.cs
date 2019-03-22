@@ -11,7 +11,7 @@ namespace webTintuc.Areas.Front.Controllers
         // GET: Front/Home
         public ActionResult Index()
         {
-
+            
             return View();
         }
     }

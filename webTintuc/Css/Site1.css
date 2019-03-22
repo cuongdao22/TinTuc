@@ -315,7 +315,7 @@ p {
             position: absolute;
         }
 
-li:hover > .sub-menu {
+.li:hover > .sub-menu {
     display: block;
 }
 
