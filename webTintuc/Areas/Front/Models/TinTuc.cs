@@ -24,7 +24,7 @@ namespace webTintuc.Areas.Front.Models
         {
 
         }
-        public TinTuc(int id, string tieuDe, string tag, string noiDung, DateTime ngayDang, DateTime ngayTao, string hienThi, string tuKhoa, string danhMuc, string anh, string metaTitle, string tacGia, bool hot)
+        public TinTuc(int id, string tieuDe, string tag, string noiDung, DateTime ngayDang, DateTime ngayTao, string hienThi, string tuKhoa, int danhMuc, string anh, string metaTitle, string tacGia, bool hot)
         {
             Id = id;
             TieuDe = tieuDe;
