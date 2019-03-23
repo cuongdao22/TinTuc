@@ -9,7 +9,7 @@ namespace webTintuc.DAL
 {
     public class Login:Dbconnect
     {
-        public int login(string id, string pass)
+        public static int login(string id, string pass)
         {
             int kq = 1;
             if (con.State == ConnectionState.Closed) con.Open();
@@ -18,6 +18,13 @@ namespace webTintuc.DAL
             con.Close();
             return kq;
         }
-
+        public static Boolean getauthority(string id)
+        {
+            int kq = 1;
+            if (con.State == ConnectionState.Closed) con.Open();
+            SqlCommand cmd = new SqlCommand("select count()", con);
+            con.Close();
+            return false;
+        }
     }
 }

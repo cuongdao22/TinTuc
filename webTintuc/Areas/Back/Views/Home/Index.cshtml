@@ -1,6 +1,6 @@
 ﻿
 @using PagedList.Mvc;
-@model List<webTintuc.Areas.Front.Models.TinTuc>
+@model PagedList.IPagedList<webTintuc.Areas.Models.TinTuc>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Back/Views/Shared/AdminDashBoard.cshtml";
@@ -132,4 +132,10 @@
         <span class="cot4"> 21-7-1998</span>
     </div>
 </div>
+
+@foreach(var tintuc in Model)
+{
+    @tintuc.Anh1    @tintuc.Id1
+}
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
 
