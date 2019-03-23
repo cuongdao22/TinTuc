@@ -158,6 +158,8 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DAL\Dbconnect.cs" />
     <Compile Include="DAL\Login.cs" />
+    <Compile Include="Areas\Models\NhanVien.cs" />
+    <Compile Include="Areas\Models\PhongBan.cs" />
     <Compile Include="DAL\TinTuc.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

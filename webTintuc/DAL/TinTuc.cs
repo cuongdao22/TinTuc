@@ -15,7 +15,7 @@ namespace webTintuc.DAL
             List<Areas.Models.TinTuc> list = new List<Areas.Models.TinTuc>();
             SqlCommand cmd = new SqlCommand("Admin_sp_select_TinTuc", con);
             cmd.CommandType = CommandType.StoredProcedure;
-            con.Open();
+            openConnect();
             SqlDataReader rd = cmd.ExecuteReader(CommandBehavior.CloseConnection);
             while (rd.Read())
             {
@@ -42,6 +42,7 @@ namespace webTintuc.DAL
 
         public static void insert(Areas.Models.TinTuc tin)
         {
+            openConnect();
             SqlCommand cmd = new SqlCommand("sp_insert_TinTuc", con);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@TieuDe", tin.TieuDe1);
@@ -53,10 +54,12 @@ namespace webTintuc.DAL
             cmd.Parameters.AddWithValue("@TacGia", tin.TacGia1);
             cmd.Parameters.AddWithValue("@DanhMuc", tin.DanhMuc1);
             cmd.ExecuteNonQuery();
+            closeConnect();
         }
 
         public static void Admin_update(Areas.Models.TinTuc tin)
         {
+            openConnect();
             SqlCommand cmd = new SqlCommand("Admin_sp_update_TinTuc", con);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@Id", tin.Id1);
@@ -72,11 +75,30 @@ namespace webTintuc.DAL
             cmd.Parameters.AddWithValue("@Hot", tin.Hot1);   
             cmd.Parameters.AddWithValue("@DanhMuc", tin.DanhMuc1);
             cmd.ExecuteNonQuery();
+            closeConnect();
         }
 
-        public static void chuyenMuc()
+        public List<Areas.Models.DanhMuc> chuyenMuc()
         {
-
+            openConnect();
+            List<Areas.Models.DanhMuc> list = new List<Areas.Models.DanhMuc>();
+            SqlCommand cmd = new SqlCommand("sp_select_danhMuc", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataReader rd = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+            while (rd.Read())
+            {
+                Areas.Models.DanhMuc tt = new Areas.Models.DanhMuc();
+                tt.Id = rd["Id"] is DBNull ? 0 : rd.GetInt32(0);
+                tt.DanhMucCha = rd["TieuDe"] is DBNull ? 0 : rd.GetInt32(1);
+                tt.MetaTitle = rd["Tag"] is DBNull ? "" : rd.GetString(2);
+                tt.Ten = rd["NoiDung"] is DBNull ? "" : rd.GetString(3);
+                tt.TenDanhMucCha = rd["NgayDang"] is DBNull ? "" : rd.GetString(4);
+                tt.HienThi = rd["NgayDang"] is DBNull ? false : rd.GetBoolean(4);         
+                list.Add(tt);
+            }
+            rd.Close();
+            closeConnect();
+            return list;
         }
         public  static void xoa(string id)
         {

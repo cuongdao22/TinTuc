@@ -7,28 +7,32 @@ namespace webTintuc.Areas.Models
 {
     public class DanhMuc
     {
-        private int Id;
-        private string Ten;
-        private int DanhMucCha;
-        private string MetaTitle;
-        private Boolean HienThi;
+        private int id;
+        private string ten;
+        private int danhMucCha;
+        private string tenDanhMucCha;
+        private string metaTitle;
+        private Boolean hienThi;
         public DanhMuc()
         {
           
         }
-        public DanhMuc(int id, string ten, int danhMucCha, string metaTitle, bool hienThi)
+
+        public DanhMuc(int id, string ten, int danhMucCha, string tenDanhMucCha, string metaTitle, bool hienThi)
         {
-            Id = id;
-            Ten = ten;
-            DanhMucCha = danhMucCha;
-            MetaTitle = metaTitle;
-            HienThi = hienThi;
+            this.id = id;
+            this.ten = ten;
+            this.danhMucCha = danhMucCha;
+            this.tenDanhMucCha = tenDanhMucCha;
+            this.metaTitle = metaTitle;
+            this.hienThi = hienThi;
         }
 
-        public int Id1 { get => Id; set => Id = value; }
-        public string Ten1 { get => Ten; set => Ten = value; }
-        public int DanhMucCha1 { get => DanhMucCha; set => DanhMucCha = value; }
-        public string MetaTitle1 { get => MetaTitle; set => MetaTitle = value; }
-        public bool HienThi1 { get => HienThi; set => HienThi = value; }
+        public int Id { get => id; set => id = value; }
+        public string Ten { get => ten; set => ten = value; }
+        public int DanhMucCha { get => danhMucCha; set => danhMucCha = value; }
+        public string TenDanhMucCha { get => tenDanhMucCha; set => tenDanhMucCha = value; }
+        public string MetaTitle { get => metaTitle; set => metaTitle = value; }
+        public bool HienThi { get => hienThi; set => hienThi = value; }
     }
 }
