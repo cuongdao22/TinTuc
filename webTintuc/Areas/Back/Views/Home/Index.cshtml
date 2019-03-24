@@ -7,7 +7,15 @@
 }
 <link href="~/Css/bongDa.css" rel="stylesheet" />
 <h1 class="baiviettitle">Bài viết</h1>
+@using (Html.BeginForm())
+{
+    @Html.Hidden("idd", (string)ViewBag.PortfolioId)
+    <input type="submit" />
+}
 
+<h1>@ViewBag.test2</h1>
+<hr />
+<h1>@ViewBag.test3</h1>
 <div class=" tatca">
     <a href="#">Tất cả</a>
     <a href="#">|</a>
@@ -133,9 +141,9 @@
     </div>
 </div>
 
-@foreach(var tintuc in Model)
+@foreach (var tintuc in Model)
 {
-    @tintuc.Anh1    @tintuc.Id1
+    @tintuc.Anh1 @tintuc.Id1
 }
 @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
 

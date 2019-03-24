@@ -10,15 +10,35 @@ namespace webTintuc.Areas.Back.Controllers
     public class HomeController : Controller
     {
         // GET: Back/Home
-        public ActionResult Index(int? page)
+        public ActionResult Index(int? page,string id)
         {
+
+            if (Session["login"] == null)
+            {
+                return RedirectToAction("Index", "Login");
+            }
+            else
+            {
+                if (page == null) page = 1;
+                List<Areas.Models.TinTuc> list = DAL.TinTuc.selectList();
+                IEnumerable<Areas.Models.TinTuc> l = list.OrderByDescending(x => x.Id1);
+                int pageNumber = (page ?? 1);
+                ViewBag.test2 = id;
+                ViewBag.PortfolioId = "âsasasas";
+                return View(l.ToPagedList(pageNumber, 5));
+            }
+        }
+        [HttpPost]
+        public ActionResult Index(int? page, string idd,string id)
+        {
+
             if (page == null) page = 1;
             List<Areas.Models.TinTuc> list = DAL.TinTuc.selectList();
-            IEnumerable < Areas.Models.TinTuc > l = list.OrderByDescending(x => x.Id1 );
+            IEnumerable<Areas.Models.TinTuc> l = list.OrderByDescending(x => x.Id1);
             int pageNumber = (page ?? 1);
-            return View(l.ToPagedList(pageNumber,5));
+            ViewBag.test2 = idd;
+            return View(l.ToPagedList(pageNumber, 5));
         }
-     
         public ActionResult InsertTT()
         {
             
@@ -30,7 +50,7 @@ namespace webTintuc.Areas.Back.Controllers
         public ActionResult InsertTT(Areas.Models.TinTuc tt,string select)
         {
             ViewBag.noidung = tt.NoiDung1;
-            ViewBag.noidung2 = select;
+          
             return View();
         }
     }
