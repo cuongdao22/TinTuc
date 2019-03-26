@@ -16,6 +16,7 @@ namespace webTintuc.Areas.Models
         private Boolean HienThi;
         private string TuKhoa;
         private int DanhMuc;
+        private string TenDM;
         private string Anh;
         private string MetaTitle;
         private string TacGia;
@@ -25,7 +26,7 @@ namespace webTintuc.Areas.Models
         {
 
         }
-        public TinTuc(int id, string tieuDe, string tag, string noiDung, DateTime ngayDang, DateTime ngayTao, Boolean hienThi, string tuKhoa, int danhMuc, string anh, string metaTitle, string tacGia, Boolean hot)
+        public TinTuc(int id, string tieuDe, string tag, string noiDung, DateTime ngayDang, DateTime ngayTao, Boolean hienThi, string tuKhoa, int danhMuc, string anh, string metaTitle, string tacGia, Boolean hot,string TenDM)
         {
             Id = id;
             TieuDe = tieuDe;
@@ -40,6 +41,7 @@ namespace webTintuc.Areas.Models
             MetaTitle = metaTitle;
             TacGia = tacGia;
             Hot = hot;
+            this.TenDM = TenDM;
         }
 
         public int Id1 { get => Id; set => Id = value; }
@@ -55,6 +57,6 @@ namespace webTintuc.Areas.Models
         public string MetaTitle1 { get => MetaTitle; set => MetaTitle = value; }
         public string TacGia1 { get => TacGia; set => TacGia = value; }
         public Boolean Hot1 { get => Hot; set => Hot = value; }
-
+        public string TenDM1 { get => TenDM; set => TenDM = value; }
     }
 }

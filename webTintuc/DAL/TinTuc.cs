@@ -29,10 +29,11 @@ namespace webTintuc.DAL
                 tt.HienThi1 = rd["HienThi"] is DBNull ? false : rd.GetBoolean(6) ;
                 tt.TuKhoa1 = rd["TuKhoa"] is DBNull ? "" : rd.GetString(7) ;
                 tt.DanhMuc1 = rd["DanhMuc"] is DBNull ? 0 : rd.GetInt32(8) ;
-                tt.Anh1 = rd["Anh"] is DBNull ? "" : rd.GetString(9) ;
-                tt.MetaTitle1 = rd["MetaTitle"] is DBNull  ? "" : rd.GetString(10) ;
-                tt.TacGia1 = rd["Ten"] is DBNull ? "" : rd.GetString(11) ;
-                tt.Hot1 = rd["Hot"] is DBNull ? false : rd.GetBoolean(12) ;
+                tt.TenDM1 = rd["Ten"] is DBNull ? "" : rd.GetString(9);
+                tt.Anh1 = rd["Anh"] is DBNull ? "" : rd.GetString(10) ;
+                tt.MetaTitle1 = rd["MetaTitle"] is DBNull  ? "" : rd.GetString(11) ;
+                tt.TacGia1 = rd["tentg"] is DBNull ? "" : rd.GetString(12) ;
+                tt.Hot1 = rd["Hot"] is DBNull ? false : rd.GetBoolean(13) ;
                 list.Add(tt);
             }
             rd.Close();
@@ -104,7 +105,22 @@ namespace webTintuc.DAL
         {
 
         }
+        public static Boolean checkAdmin(string id)
+        {
+            Boolean check = false;
+            int kq = 1;
+            if (con.State == ConnectionState.Closed) con.Open();
+            SqlCommand cmd = new SqlCommand("select count(Nhanvien) from TongBienTap where nhanvien = @nhanvien", con);
+            //cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@nhanvien", id);
 
+            kq = (int)cmd.ExecuteScalar();
+
+
+            con.Close();
+
+            return check;
+        }
 
     }
 }

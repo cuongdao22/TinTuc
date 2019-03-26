@@ -10,7 +10,7 @@ namespace webTintuc.Areas.Back.Controllers
     public class HomeController : Controller
     {
         // GET: Back/Home
-        public ActionResult Index(int? page,string id)
+        public ActionResult Index(int? page,int ?id)
         {
 
             if (Session["login"] == null)
@@ -20,17 +20,19 @@ namespace webTintuc.Areas.Back.Controllers
             else
             {
                 if (page == null) page = 1;
+                ViewBag.username = "Tiến Thành";
                 List<Areas.Models.TinTuc> list = DAL.TinTuc.selectList();
                 IEnumerable<Areas.Models.TinTuc> l = list.OrderByDescending(x => x.Id1);
                 int pageNumber = (page ?? 1);
-                ViewBag.test2 = id;
-                ViewBag.PortfolioId = "âsasasas";
+                
+                ViewBag.PortfolioId =  id.ToString();
                 return View(l.ToPagedList(pageNumber, 5));
             }
         }
         [HttpPost]
-        public ActionResult Index(int? page, string idd,string id)
+        public ActionResult Index(int? page, string idd)
         {
+            ViewBag.PortfolioId = idd;
 
             if (page == null) page = 1;
             List<Areas.Models.TinTuc> list = DAL.TinTuc.selectList();
@@ -41,8 +43,19 @@ namespace webTintuc.Areas.Back.Controllers
         }
         public ActionResult InsertTT()
         {
-            
-            return View();
+            if (Session["login"] == null)
+            {
+                return RedirectToAction("Index", "Login");
+            }
+            else
+            {
+                string id = Session["login"].ToString();
+                ViewBag.listTag = DAL.Tag.getTag();
+                //DAL.TinTuc.checkAdmin(id);
+                ViewBag.username = "Tiến Thành";
+                return View();
+            }
+           
         }
         [HttpPost]
         [ValidateAntiForgeryToken]

@@ -6,18 +6,18 @@
 }
 <script src="~/Plugin/ckeditor/ckeditor.js"></script>
 <script src="~/Plugin/ckfinder/ckfinder.js"></script>
-<h2>InsertTT</h2>
+<link href="~/Css/tintuc.css" rel="stylesheet" />
+<h2>Thêm mới</h2>
 <script src="~/Scripts/JavaScript.js"></script>
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
 <div class="form-horizontal">
-    <h4>TinTuc</h4>
+
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-    <h3 name="abc" values=" sdđ">ádasdasd</h3>
     <div class="form-group">
         @*@Html.LabelFor(model => model.TieuDe1, htmlAttributes: new { @class = "control-label col-md-2" })*@
         <label class=" control-label col-md-2">Tiêu đề </label>
@@ -30,24 +30,39 @@
     <div class="form-group">
         <label class=" control-label col-md-2">Thẻ tag </label>
         <div class="col-md-10">
-            @Html.EditorFor(model => model.Tag1, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.EditorFor(model => model.Tag1, new { htmlAttributes = new { @class = "form-control inputTag" } })
             @Html.ValidationMessageFor(model => model.Tag1, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label class=" control-label col-md-2">Chọn thẻ tag </label>
+        <div class="col-md-10">
+            <select name="select" id="selectDM" onchange="chonTag()">
+                @foreach (var t in ViewBag.listTag)
+                {
+                    <option value="@t.Trim()">@t</option>
+                }
+
+
+
+            </select>
         </div>
     </div>
     <div class="form-group">
         <label class=" control-label col-md-2">Danh mục </label>
         <div class="col-md-10">
             @*@Html.ListBoxFor(ViewBag.list,)*@
+            <select name="select"  onchange="">
+                <option value="0" selected disabled hidden>Select car:</option>
+                <option value="1">Audi</option>
+                <option value="2">BMW</option>
+                <option value="3">BMW</option>
+                <option value="4">BMW</option>
+            </select>
             @Html.ValidationMessageFor(model => model.Tag1, "", new { @class = "text-danger" })
         </div>
     </div>
-    <select name="select" >
-        <option value="0" selected disabled hidden>Select car:</option>
-        <option value="1">Audi</option>
-        <option value="2">BMW</option>
-        <option value="3">BMW</option>
-        <option value="4">BMW</option>
-    </select>
+
 
 
     <div class="form-group">
@@ -68,7 +83,13 @@
             CKEDITOR.replace("NoiDung1");
         </script>
     </div>
-
+    <div class="form-group">
+        <label class=" control-label col-md-2">Ảnh hiển thị </label>
+        <div class="col-md-10 anh_them_tt">
+            <img id="imgtt" src="~/Upload/image.png" /> <br>
+            <button type="button" id="selectimg"> Chọn ảnh</button>
+        </div>
+    </div>
 
     @if (ViewBag.noidung != "")
     {
@@ -86,8 +107,8 @@
     </div>
 </div>
 }
-<input type="text" class="url"/>
-<button type="button" id="selectimg"> </button>
+<input type="hidden" class="url" />
+
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>

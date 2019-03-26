@@ -31,8 +31,11 @@ namespace webTintuc.Areas.Back.Controllers
             int kq = DAL.Login.login(username, pass);
             if (kq != 0)
             {
-                Session["login"] = username;
-                return RedirectToAction("Index", "Home",new { id = "100"});
+                Areas.Models.NhanVien nv = new Areas.Models.NhanVien();
+                nv = DAL.Login.getauthority(username);
+                Session["login"] = nv.Id;
+                //return RedirectToAction("Index", "Home", new { id = "100" });
+                return RedirectToAction("Index", "Home",new { id = nv.Id});
 
             }
             else

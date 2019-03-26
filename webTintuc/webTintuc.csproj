@@ -157,10 +157,12 @@
     <Compile Include="Areas\Models\TinTuc.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DAL\DanhMuc.cs" />
     <Compile Include="DAL\Dbconnect.cs" />
     <Compile Include="DAL\Login.cs" />
     <Compile Include="Areas\Models\NhanVien.cs" />
     <Compile Include="Areas\Models\PhongBan.cs" />
+    <Compile Include="DAL\Tag.cs" />
     <Compile Include="DAL\TinTuc.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -181,6 +183,7 @@
     <Content Include="Css\Site1.css" />
     <Content Include="Css\site2.css" />
     <Content Include="Css\styles.css" />
+    <Content Include="Css\tintuc.css" />
     <Content Include="Css\util.css" />
     <Content Include="fonts\font-awesome-4.7.0\css\font-awesome.css" />
     <Content Include="fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
@@ -1415,6 +1418,7 @@
     <Content Include="fonts\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
     <Content Include="fonts\vendor\bootstrap\css\bootstrap.css.map" />
     <Content Include="fonts\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Areas\Back\Views\Login\Indexx.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\custom.js" />
     <Content Include="Scripts\JavaScript.js" />
@@ -1429,6 +1433,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\menu.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Upload\image.png" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1449,7 +1454,6 @@
     <Folder Include="Areas\Back\Models\" />
     <Folder Include="Areas\Front\Models\" />
     <Folder Include="Models\" />
-    <Folder Include="Upload\" />
     <Folder Include="Views\Default\" />
   </ItemGroup>
   <ItemGroup>
