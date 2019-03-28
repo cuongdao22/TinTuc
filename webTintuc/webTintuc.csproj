@@ -164,6 +164,7 @@
     <Compile Include="Areas\Models\PhongBan.cs" />
     <Compile Include="DAL\Tag.cs" />
     <Compile Include="DAL\TinTuc.cs" />
+    <Compile Include="DAL\XuLiChuoi.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1419,6 +1420,7 @@
     <Content Include="fonts\vendor\bootstrap\css\bootstrap.css.map" />
     <Content Include="fonts\vendor\bootstrap\css\bootstrap.min.css.map" />
     <Content Include="Areas\Back\Views\Login\Indexx.cshtml" />
+    <Content Include="Areas\Back\Views\Home\updateTT.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\custom.js" />
     <Content Include="Scripts\JavaScript.js" />

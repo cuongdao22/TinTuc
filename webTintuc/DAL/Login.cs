@@ -34,7 +34,7 @@ namespace webTintuc.DAL
             while (rd.Read())
             {
                 nv.Id = rd["Id"] is DBNull ? 0 : rd.GetInt32(0);
-                nv.Ten = rd["Id"] is DBNull ? "" : rd.GetString(1);
+                nv.Ten = rd["Id"] is DBNull ? "" : rd.GetString(1).Trim();
                 nv.Admin = rd["Id"] is DBNull ? false : rd.GetBoolean(2);
 
             }

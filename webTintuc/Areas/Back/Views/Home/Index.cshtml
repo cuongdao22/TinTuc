@@ -41,18 +41,19 @@
         <option value="Hà Nội">Thời tiết</option>
     </select>
     <a href="#" title="button2 " class="button2 loc">Lọc</a>
-    @Html.ActionLink("Thêm mới", "InsertTT",null,new { @class = "button2 themmoi" } )
+    @Html.ActionLink("Thêm", "InsertTT",null,new { @class = "button2 themmoi" } )
 
 </div>
 <div class=" tieude ">
     <span class="cot1"> Tiêu đề</span>
     <span class="cot2"> Tác giả</span>
     <span class="cot3"> Chuyên mục</span>
-    <span class="cot4"> Thời gian</span>
+    <span class="cot3"> Thời gian đăng</span>
+    <span class="cot4"> Thời gian tạo</span>
     <span class="cot5"> Trạng thái</span>
 </div>
 <div class="danhsach">
-    @{int i = 0;string classs = "le";}
+    @{int i = 0;string classs = "le";string ngaydang = "";}
     @foreach (var tintuc in Model)
     {
         i++;
@@ -66,10 +67,20 @@
         }
     <div class="baiviet @classs ">
         <a href="#"><span class="cot1"> @tintuc.TieuDe1</span> </a>
-        <span class="cot2"> TienThanh</span>
-        <span class="cot3"> Sức khỏe</span>
-        <span class="cot4"> 21-7-1998</span>
-        @Html.ActionLink("Sửa", "InsertTT", new { id = tintuc.Id1 })
+        <span class="cot2"> @tintuc.TacGia1</span>
+        <span class="cot3"> @tintuc.TenDM1</span>
+        @if (tintuc.NgayDang1.Year == 1990)
+        {
+            <span class="cot3"> Chưa đăng</span>
+        }
+        else
+        {
+            <span class="cot3"> @tintuc.NgayDang1</span>
+        }
+        
+
+        <span class="cot4"> @tintuc.NgayTao1</span>
+        @Html.ActionLink("Sửa", "updateTT", new { id = tintuc.Id1 })
     </div>
     }
 

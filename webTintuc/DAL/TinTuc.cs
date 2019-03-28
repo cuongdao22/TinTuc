@@ -21,18 +21,18 @@ namespace webTintuc.DAL
             {
                 Areas.Models.TinTuc tt = new Areas.Models.TinTuc();
                 tt.Id1 = rd["Id"] is DBNull ? 0 : rd.GetInt32(0) ;
-                tt.TieuDe1 = rd["TieuDe"] is DBNull ? "" : rd.GetString(1) ;
+                tt.TieuDe1 = rd["TieuDe"] is DBNull ? "" : rd.GetString(1).Trim() ;
                 tt.Tag1 = rd["Tag"] is DBNull ? "" : rd.GetString(2) ;
-                tt.NoiDung1 = rd["NoiDung"] is DBNull ? "" : rd.GetString(3) ;
+                tt.NoiDung1 = rd["NoiDung"] is DBNull ? "" : rd.GetString(3).Trim() ;
                 tt.NgayDang1 = rd["NgayDang"] is DBNull ? d : rd.GetDateTime(4) ;
                 tt.NgayTao1 = rd["NgayTao"] is DBNull ? d : rd.GetDateTime(5) ;
                 tt.HienThi1 = rd["HienThi"] is DBNull ? false : rd.GetBoolean(6) ;
-                tt.TuKhoa1 = rd["TuKhoa"] is DBNull ? "" : rd.GetString(7) ;
+                tt.TuKhoa1 = rd["TuKhoa"] is DBNull ? "" : rd.GetString(7).Trim() ;
                 tt.DanhMuc1 = rd["DanhMuc"] is DBNull ? 0 : rd.GetInt32(8) ;
-                tt.TenDM1 = rd["Ten"] is DBNull ? "" : rd.GetString(9);
-                tt.Anh1 = rd["Anh"] is DBNull ? "" : rd.GetString(10) ;
-                tt.MetaTitle1 = rd["MetaTitle"] is DBNull  ? "" : rd.GetString(11) ;
-                tt.TacGia1 = rd["tentg"] is DBNull ? "" : rd.GetString(12) ;
+                tt.TenDM1 = rd["Ten"] is DBNull ? "" : rd.GetString(9).Trim();
+                tt.Anh1 = rd["Anh"] is DBNull ? "" : rd.GetString(10).Trim() ;
+                tt.MetaTitle1 = rd["MetaTitle"] is DBNull  ? "" : rd.GetString(11).Trim() ;
+                tt.TacGia1 = rd["tentg"] is DBNull ? "" : rd.GetString(12).Trim() ;
                 tt.Hot1 = rd["Hot"] is DBNull ? false : rd.GetBoolean(13) ;
                 list.Add(tt);
             }
@@ -46,13 +46,13 @@ namespace webTintuc.DAL
             openConnect();
             SqlCommand cmd = new SqlCommand("sp_insert_TinTuc", con);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@TieuDe", tin.TieuDe1);
-            cmd.Parameters.AddWithValue("@Tag", tin.Tag1);
-            cmd.Parameters.AddWithValue("@NoiDung", tin.NoiDung1);
-            cmd.Parameters.AddWithValue("@TuKhoa", tin.TuKhoa1);
-            cmd.Parameters.AddWithValue("@Anh", tin.Anh1);
-            cmd.Parameters.AddWithValue("@MetaTitle", tin.MetaTitle1);
-            cmd.Parameters.AddWithValue("@TacGia", tin.TacGia1);
+            cmd.Parameters.AddWithValue("@TieuDe", tin.TieuDe1.Trim());
+            cmd.Parameters.AddWithValue("@Tag", tin.Tag1.Trim());
+            cmd.Parameters.AddWithValue("@NoiDung", tin.NoiDung1.Trim());
+            cmd.Parameters.AddWithValue("@TuKhoa", tin.TuKhoa1.Trim());
+            cmd.Parameters.AddWithValue("@Anh", tin.Anh1.Trim());
+            cmd.Parameters.AddWithValue("@MetaTitle", tin.MetaTitle1.Trim());
+            cmd.Parameters.AddWithValue("@TacGia", tin.TacGia1.Trim());
             cmd.Parameters.AddWithValue("@DanhMuc", tin.DanhMuc1);
             cmd.ExecuteNonQuery();
             closeConnect();
@@ -64,15 +64,15 @@ namespace webTintuc.DAL
             SqlCommand cmd = new SqlCommand("Admin_sp_update_TinTuc", con);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@Id", tin.Id1);
-            cmd.Parameters.AddWithValue("@TieuDe", tin.TieuDe1);
-            cmd.Parameters.AddWithValue("@Tag", tin.Tag1);
-            cmd.Parameters.AddWithValue("@NoiDung", tin.NoiDung1);
+            cmd.Parameters.AddWithValue("@TieuDe", tin.TieuDe1.Trim());
+            cmd.Parameters.AddWithValue("@Tag", tin.Tag1.Trim());
+            cmd.Parameters.AddWithValue("@NoiDung", tin.NoiDung1.Trim());
             cmd.Parameters.AddWithValue("@HienThi", tin.HienThi1);
             if(tin.HienThi1 ) cmd.Parameters.AddWithValue("@NgayDang", DateTime.Now.ToString());
             else cmd.Parameters.AddWithValue("@NgayDang", "");
-            cmd.Parameters.AddWithValue("@TuKhoa", tin.TuKhoa1);
-            cmd.Parameters.AddWithValue("@Anh", tin.Anh1);
-            cmd.Parameters.AddWithValue("@MetaTitle", tin.MetaTitle1);
+            cmd.Parameters.AddWithValue("@TuKhoa", tin.TuKhoa1.Trim());
+            cmd.Parameters.AddWithValue("@Anh", tin.Anh1.Trim());
+            cmd.Parameters.AddWithValue("@MetaTitle", tin.MetaTitle1.Trim());
             cmd.Parameters.AddWithValue("@Hot", tin.Hot1);   
             cmd.Parameters.AddWithValue("@DanhMuc", tin.DanhMuc1);
             cmd.ExecuteNonQuery();
@@ -91,9 +91,9 @@ namespace webTintuc.DAL
                 Areas.Models.DanhMuc tt = new Areas.Models.DanhMuc();
                 tt.Id = rd["Id"] is DBNull ? 0 : rd.GetInt32(0);
                 tt.DanhMucCha = rd["TieuDe"] is DBNull ? 0 : rd.GetInt32(1);
-                tt.MetaTitle = rd["Tag"] is DBNull ? "" : rd.GetString(2);
-                tt.Ten = rd["NoiDung"] is DBNull ? "" : rd.GetString(3);
-                tt.TenDanhMucCha = rd["NgayDang"] is DBNull ? "" : rd.GetString(4);
+                tt.MetaTitle = rd["Tag"] is DBNull ? "" : rd.GetString(2).Trim();
+                tt.Ten = rd["NoiDung"] is DBNull ? "" : rd.GetString(3).Trim();
+                tt.TenDanhMucCha = rd["NgayDang"] is DBNull ? "" : rd.GetString(4).Trim();
                 tt.HienThi = rd["NgayDang"] is DBNull ? false : rd.GetBoolean(4);         
                 list.Add(tt);
             }
@@ -121,6 +121,16 @@ namespace webTintuc.DAL
 
             return check;
         }
+        public static string getIDTT()
+        {
+            
+            string kq = "";
+            if (con.State == ConnectionState.Closed) con.Open();
+            SqlCommand cmd = new SqlCommand("select max(id) from tintuc", con);
+            kq = cmd.ExecuteScalar().ToString();
+            con.Close();
 
+            return kq;
+        }
     }
 }

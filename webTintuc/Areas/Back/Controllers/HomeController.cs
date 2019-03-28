@@ -5,11 +5,16 @@ using System.Web;
 using System.Web.Mvc;
 using PagedList.Mvc;
 using PagedList;
+using System.Text.RegularExpressions;
+
 namespace webTintuc.Areas.Back.Controllers
 {
     public class HomeController : Controller
     {
         // GET: Back/Home
+        
+
+
         public ActionResult Index(int? page,int ?id)
         {
 
@@ -52,6 +57,7 @@ namespace webTintuc.Areas.Back.Controllers
                 string id = Session["login"].ToString();
                 ViewBag.listTag = DAL.Tag.getTag();
                 //DAL.TinTuc.checkAdmin(id);
+                ViewBag.listDM = DAL.DanhMuc.select(id);
                 ViewBag.username = "Tiến Thành";
                 return View();
             }
@@ -60,11 +66,52 @@ namespace webTintuc.Areas.Back.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
-        public ActionResult InsertTT(Areas.Models.TinTuc tt,string select)
+        public ActionResult InsertTT(Areas.Models.TinTuc tt,string selectDM,string url)
         {
-            ViewBag.noidung = tt.NoiDung1;
-          
-            return View();
+            if (Session["login"] == null)
+            {
+                return RedirectToAction("Index", "Login");
+            }
+            else
+            {
+                string id = Session["login"].ToString();
+                tt.DanhMuc1 = Int32.Parse(selectDM);
+                tt.Anh1 = url;
+                tt.TacGia1 = id;
+                tt.MetaTitle1 = DAL.XuLiChuoi.xoaKhoangTrang(tt.TieuDe1);
+                string[] tagg = tt.Tag1.Split(',');
+                DAL.TinTuc.insert(tt);
+                for (int i = 0; i < tagg.Length; i++)
+                {
+                    DAL.Tag.insert(tagg[i]);
+                    DAL.Tag.insertTagtt(tagg[i], DAL.TinTuc.getIDTT());
+                }
+                ViewBag.listTag = DAL.Tag.getTag();
+                ViewBag.listDM = DAL.DanhMuc.select(id);
+                return RedirectToAction("Index", "Home");
+                
+            }
         }
+
+
+        public ActionResult updateTT(string idTT)
+        {
+            if (Session["login"] == null)
+            {
+                return RedirectToAction("Index", "Login");
+            }
+            else
+            {
+                string id = Session["login"].ToString();
+                ViewBag.listTag = DAL.Tag.getTag();
+                //DAL.TinTuc.checkAdmin(id);
+                ViewBag.listDM = DAL.DanhMuc.select(id);
+                ViewBag.username = "Tiến Thành";
+                return View();
+            }
+
+        }
+
+
     }
 }

@@ -13,9 +13,20 @@ namespace webTintuc.DAL
         public static void insert(string tag)
         {
             openConnect();
-            SqlCommand cmd = new SqlCommand("sp_insert_tag", con);
+            SqlCommand cmd = new SqlCommand("sp_insert_Tag", con);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@Tag", tag);
+            cmd.Parameters.AddWithValue("@tag", XuLiChuoi.xoaKhoangTrang(tag.Trim()));
+            
+            cmd.ExecuteNonQuery();
+            closeConnect();
+        }
+        public static void insertTagtt(string tag,string maTin)
+        {
+            openConnect();
+            SqlCommand cmd = new SqlCommand("sp_insert_TagTT", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@tag", XuLiChuoi.xoaKhoangTrang( tag.Trim()));
+            cmd.Parameters.AddWithValue("@tintuc", maTin.Trim());
             cmd.ExecuteNonQuery();
             closeConnect();
         }
@@ -28,7 +39,7 @@ namespace webTintuc.DAL
             while (rd.Read())
             {
                 Areas.Models.TinTuc tt = new Areas.Models.TinTuc();
-                string ttag = rd["Tag"] is DBNull ? "" : rd.GetString(0);
+                string ttag = rd["Tag"] is DBNull ? "" : rd.GetString(0).Trim();
 
                 l.Add(ttag);
             }
