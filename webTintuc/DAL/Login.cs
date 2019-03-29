@@ -13,18 +13,34 @@ namespace webTintuc.DAL
         {
             int kq = 1;
             if (con.State == ConnectionState.Closed) con.Open();
-            SqlCommand cmd = new SqlCommand("select count(id) from [user] where id = '" + id + "' and password = '" + pass + "'", con);
+            SqlCommand cmd = new SqlCommand("sp_login", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Email", id);
+            cmd.Parameters.AddWithValue("@MatKhau", pass);
             kq = (int)cmd.ExecuteScalar();
             con.Close();
             return kq;
         }
-        public static Boolean getauthority(string id)
+        public static Areas.Models.NhanVien getauthority(string email)
         {
-            int kq = 1;
             if (con.State == ConnectionState.Closed) con.Open();
-            SqlCommand cmd = new SqlCommand("select count()", con);
+            SqlCommand cmd = new SqlCommand("sp_getIDNV", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Email", email);
+            openConnect();
+            Areas.Models.NhanVien nv = new Areas.Models.NhanVien();
+
+            SqlDataReader rd = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+            while (rd.Read())
+            {
+                nv.Id = rd["Id"] is DBNull ? 0 : rd.GetInt32(0);
+                nv.Ten = rd["Id"] is DBNull ? "" : rd.GetString(1).Trim();
+                nv.Admin = rd["Id"] is DBNull ? false : rd.GetBoolean(2);
+
+            }
+            rd.Close();
             con.Close();
-            return false;
+            return nv;
         }
     }
 }

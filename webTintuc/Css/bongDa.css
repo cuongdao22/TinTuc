@@ -584,10 +584,7 @@
     margin-bottom: 2px;
     overflow: auto;
 }
-.baiviet:hover{
-    cursor:pointer;
-    background: #dedede;
-}
+
 .baiviet span{
     margin-top:14px;
     float:left;

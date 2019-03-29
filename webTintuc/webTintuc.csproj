@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -151,19 +150,21 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Back\BackAreaRegistration.cs" />
     <Compile Include="Areas\Back\Controllers\HomeController.cs" />
-    <Compile Include="Areas\Back\Controllers\NhanVienController.cs" />
     <Compile Include="Areas\Front\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Back\Controllers\LoginController.cs" />
     <Compile Include="Areas\Front\FrontAreaRegistration.cs" />
     <Compile Include="Areas\Models\DanhMuc.cs" />
     <Compile Include="Areas\Models\TinTuc.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DAL\DanhMuc.cs" />
     <Compile Include="DAL\Dbconnect.cs" />
     <Compile Include="DAL\Login.cs" />
     <Compile Include="Areas\Models\NhanVien.cs" />
     <Compile Include="Areas\Models\PhongBan.cs" />
-    <Compile Include="DAL\NhanVien.cs" />
+    <Compile Include="DAL\Tag.cs" />
     <Compile Include="DAL\TinTuc.cs" />
+    <Compile Include="DAL\XuLiChuoi.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -178,14 +179,60 @@
     <Content Include="Css\admin.css" />
     <Content Include="Css\bongDa.css" />
     <Content Include="Css\font-awesome.min.css" />
+    <Content Include="Css\login.css" />
+    <Content Include="Css\main.css" />
     <Content Include="Css\Site1.css" />
     <Content Include="Css\site2.css" />
     <Content Include="Css\styles.css" />
+    <Content Include="Css\tintuc.css" />
+    <Content Include="Css\util.css" />
+    <Content Include="fonts\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="fonts\iconic\css\material-design-iconic-font.css" />
+    <Content Include="fonts\iconic\css\material-design-iconic-font.min.css" />
+    <Content Include="fonts\iconic\fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="fonts\Linearicons-Free-v1.0.0\icon-font.min.css" />
+    <Content Include="fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.svg" />
+    <Content Include="fonts\ubuntu\UFL.txt" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\vendor\animate\animate.css" />
+    <Content Include="fonts\vendor\animsition\css\animsition.css" />
+    <Content Include="fonts\vendor\animsition\css\animsition.min.css" />
+    <Content Include="fonts\vendor\animsition\js\animsition.js" />
+    <Content Include="fonts\vendor\animsition\js\animsition.min.js" />
+    <Content Include="fonts\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="fonts\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="fonts\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="fonts\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="fonts\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="fonts\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="fonts\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="fonts\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="fonts\vendor\bootstrap\js\popper.js" />
+    <Content Include="fonts\vendor\bootstrap\js\popper.min.js" />
+    <Content Include="fonts\vendor\bootstrap\js\tooltip.js" />
+    <Content Include="fonts\vendor\countdowntime\countdowntime.js" />
+    <Content Include="fonts\vendor\css-hamburgers\hamburgers.css" />
+    <Content Include="fonts\vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="fonts\vendor\daterangepicker\daterangepicker.css" />
+    <Content Include="fonts\vendor\daterangepicker\daterangepicker.js" />
+    <Content Include="fonts\vendor\daterangepicker\moment.js" />
+    <Content Include="fonts\vendor\daterangepicker\moment.min.js" />
+    <Content Include="fonts\vendor\jquery\jquery-3.2.1.min.js" />
+    <Content Include="fonts\vendor\perfect-scrollbar\perfect-scrollbar.css" />
+    <Content Include="fonts\vendor\perfect-scrollbar\perfect-scrollbar.min.js" />
+    <Content Include="fonts\vendor\select2\select2.css" />
+    <Content Include="fonts\vendor\select2\select2.js" />
+    <Content Include="fonts\vendor\select2\select2.min.css" />
+    <Content Include="fonts\vendor\select2\select2.min.js" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\bg-01.jpg" />
+    <Content Include="images\icons\favicon.ico" />
     <Content Include="Img\arrow-left.png" />
     <Content Include="Img\backgroud.jpg" />
     <Content Include="Img\banner_hcm_02-min.png" />
@@ -1298,7 +1345,82 @@
     <Content Include="Plugin\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Plugin\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Plugin\ckfinder\userfiles\.htaccess" />
-    <Content Include="Areas\Back\Views\NhanVien\NhanVien.cshtml" />
+    <Content Include="Areas\Back\Views\Login\Index.cshtml" />
+    <Content Include="fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="fonts\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\core.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\list.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\path.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="fonts\iconic\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="fonts\iconic\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="fonts\iconic\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="fonts\iconic\fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.eot" />
+    <Content Include="fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.ttf" />
+    <Content Include="fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.woff" />
+    <Content Include="fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.woff2" />
+    <Content Include="fonts\poppins\Poppins-Black.ttf" />
+    <Content Include="fonts\poppins\Poppins-BlackItalic.ttf" />
+    <Content Include="fonts\poppins\Poppins-Bold.ttf" />
+    <Content Include="fonts\poppins\Poppins-BoldItalic.ttf" />
+    <Content Include="fonts\poppins\Poppins-ExtraBold.ttf" />
+    <Content Include="fonts\poppins\Poppins-ExtraBoldItalic.ttf" />
+    <Content Include="fonts\poppins\Poppins-ExtraLight.ttf" />
+    <Content Include="fonts\poppins\Poppins-ExtraLightItalic.ttf" />
+    <Content Include="fonts\poppins\Poppins-Italic.ttf" />
+    <Content Include="fonts\poppins\Poppins-Light.ttf" />
+    <Content Include="fonts\poppins\Poppins-LightItalic.ttf" />
+    <Content Include="fonts\poppins\Poppins-Medium.ttf" />
+    <Content Include="fonts\poppins\Poppins-MediumItalic.ttf" />
+    <Content Include="fonts\poppins\Poppins-Regular.ttf" />
+    <Content Include="fonts\poppins\Poppins-SemiBold.ttf" />
+    <Content Include="fonts\poppins\Poppins-SemiBoldItalic.ttf" />
+    <Content Include="fonts\poppins\Poppins-Thin.ttf" />
+    <Content Include="fonts\poppins\Poppins-ThinItalic.ttf" />
+    <Content Include="fonts\ubuntu\Ubuntu-Bold.ttf" />
+    <Content Include="fonts\ubuntu\Ubuntu-BoldItalic.ttf" />
+    <Content Include="fonts\ubuntu\Ubuntu-Italic.ttf" />
+    <Content Include="fonts\ubuntu\Ubuntu-Light.ttf" />
+    <Content Include="fonts\ubuntu\Ubuntu-LightItalic.ttf" />
+    <Content Include="fonts\ubuntu\Ubuntu-Medium.ttf" />
+    <Content Include="fonts\ubuntu\Ubuntu-MediumItalic.ttf" />
+    <Content Include="fonts\ubuntu\Ubuntu-Regular.ttf" />
+    <Content Include="fonts\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="fonts\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="fonts\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="fonts\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="fonts\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="fonts\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Areas\Back\Views\Login\Indexx.cshtml" />
+    <Content Include="Areas\Back\Views\Home\updateTT.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\custom.js" />
     <Content Include="Scripts\JavaScript.js" />
@@ -1313,6 +1435,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\menu.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Upload\image.png" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1333,7 +1456,6 @@
     <Folder Include="Areas\Back\Models\" />
     <Folder Include="Areas\Front\Models\" />
     <Folder Include="Models\" />
-    <Folder Include="Upload\" />
     <Folder Include="Views\Default\" />
   </ItemGroup>
   <ItemGroup>
@@ -1382,7 +1504,6 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -22,7 +22,7 @@ namespace webTintuc.DAL
         {
             if (con != null && con.State == ConnectionState.Open)
             {
-                con.Open();
+                con.Close();
             }
         }
     }

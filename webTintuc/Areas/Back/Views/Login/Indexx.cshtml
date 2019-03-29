@@ -1,0 +1,113 @@
+﻿@model IEnumerable<webTintuc.Areas.Models.TinTuc>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Indexx</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TieuDe1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tag1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NoiDung1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NgayDang1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NgayTao1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HienThi1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TuKhoa1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DanhMuc1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Anh1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MetaTitle1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TacGia1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hot1)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TieuDe1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tag1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NoiDung1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayDang1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayTao1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HienThi1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TuKhoa1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DanhMuc1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Anh1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MetaTitle1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TacGia1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hot1)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

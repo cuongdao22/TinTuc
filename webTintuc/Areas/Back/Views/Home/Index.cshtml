@@ -7,6 +7,11 @@
 }
 <link href="~/Css/bongDa.css" rel="stylesheet" />
 <h1 class="baiviettitle">Bài viết</h1>
+@using (Html.BeginForm())
+{
+    @Html.Hidden("idd", (string)ViewBag.PortfolioId)
+    <input type="submit" />
+}
 
 <div class=" tatca">
     <a href="#">Tất cả</a>
@@ -36,23 +41,49 @@
         <option value="Hà Nội">Thời tiết</option>
     </select>
     <a href="#" title="button2 " class="button2 loc">Lọc</a>
-    <a href="#" title="button2 " class="button2 themmoi">Thêm mới</a>
+    @Html.ActionLink("Thêm", "InsertTT",null,new { @class = "button2 themmoi" } )
+
 </div>
 <div class=" tieude ">
     <span class="cot1"> Tiêu đề</span>
     <span class="cot2"> Tác giả</span>
     <span class="cot3"> Chuyên mục</span>
-    <span class="cot4"> Thời gian</span>
+    <span class="cot3"> Thời gian đăng</span>
+    <span class="cot4"> Thời gian tạo</span>
     <span class="cot5"> Trạng thái</span>
 </div>
 <div class="danhsach">
+    @{int i = 0;string classs = "le";string ngaydang = "";}
+    @foreach (var tintuc in Model)
+    {
+        i++;
+        if (i % 2 != 0)
+        {
+            classs = "le";
+        }
+        else
+        {
+            classs = "chan";
+        }
+    <div class="baiviet @classs ">
+        <a href="#"><span class="cot1"> @tintuc.TieuDe1</span> </a>
+        <span class="cot2"> @tintuc.TacGia1</span>
+        <span class="cot3"> @tintuc.TenDM1</span>
+        @if (tintuc.NgayDang1.Year == 1990)
+        {
+            <span class="cot3"> Chưa đăng</span>
+        }
+        else
+        {
+            <span class="cot3"> @tintuc.NgayDang1</span>
+        }
+        
 
-    <div class="baiviet le">
-        <span class="cot1"> Bí kíp '5 ấm, 1 mát' giúp cả nhà tránh ho suốt mùa đông</span>
-        <span class="cot2"> TienThanh</span>
-        <span class="cot3"> Sức khỏe</span>
-        <span class="cot4"> 21-7-1998</span>
+        <span class="cot4"> @tintuc.NgayTao1</span>
+        @Html.ActionLink("Sửa", "updateTT", new { id = tintuc.Id1 })
     </div>
+    }
+
     <div class="baiviet chan">
         <span class="cot1"> Thủ tướng: Tại sao cùng chủ trương, cơ chế chính sách mà nơi làm tốt, nơi trì trệ?</span>
         <span class="cot2"> Oanh</span>
@@ -133,9 +164,6 @@
     </div>
 </div>
 
-@foreach(var tintuc in Model)
-{
-    @tintuc.Anh1    @tintuc.Id1
-}
+
 @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
 
