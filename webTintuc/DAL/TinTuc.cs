@@ -20,7 +20,7 @@ namespace webTintuc.DAL
             while (rd.Read())
             {
                 Areas.Models.TinTuc tt = new Areas.Models.TinTuc();
-                tt.Id1 = rd["Id"] is DBNull ? 0 : rd.GetInt32(0) ;
+                tt.Id1 = rd["Id"] is DBNull ? 0 : rd.GetInt32(0);
                 tt.TieuDe1 = rd["TieuDe"] is DBNull ? "" : rd.GetString(1) ;
                 tt.Tag1 = rd["Tag"] is DBNull ? "" : rd.GetString(2) ;
                 tt.NoiDung1 = rd["NoiDung"] is DBNull ? "" : rd.GetString(3) ;

@@ -9,7 +9,7 @@ namespace webTintuc.DAL
 {
     public class Dbconnect
     {
-        protected static SqlConnection con = new SqlConnection(@"Data Source = (local) ; Initial Catalog = WebTinTuc ;Integrated Security = True ");
+        protected static SqlConnection con = new SqlConnection(@"Data Source = .\SQLEXPRESS ; Initial Catalog = WebTinTuc ;Integrated Security = True ");
 
         public static void openConnect()
         {
