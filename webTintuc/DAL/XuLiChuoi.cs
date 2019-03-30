@@ -18,7 +18,7 @@ namespace webTintuc.DAL
         {
             s = StripUnicodeCharactersFromString(s);
             
-            return s.Replace(" ",string.Empty);
+            return s.Replace(" ","-");
         }
     }
 }

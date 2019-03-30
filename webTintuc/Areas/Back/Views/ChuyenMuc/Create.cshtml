@@ -1,0 +1,72 @@
+﻿@model webTintuc.Areas.Models.DanhMuc
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Back/Views/Shared/AdminDashBoard.cshtml";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>DanhMuc</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <label class=" control-label col-md-2">Tên danh mục </label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Ten, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Ten, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class=" control-label col-md-2">Danh mục </label>
+            <div class="col-md-10">
+                @*@Html.ListBoxFor(ViewBag.list,)*@
+                <select name="selectDM" onchange="">
+
+                    @foreach (var t in ViewBag.listDM)
+                    {
+                        <option value="@t.Id">@t.Ten</option>
+                    }
+                    <option style="color:red" value="0">Không </option>
+                </select>
+                @Html.ValidationMessageFor(model => model.DanhMucCha, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            <label class=" control-label col-md-2">Metatitle </label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MetaTitle, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MetaTitle, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class=" control-label col-md-2">Hiển thị </label>
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.HienThi)
+                    @Html.ValidationMessageFor(model => model.HienThi, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

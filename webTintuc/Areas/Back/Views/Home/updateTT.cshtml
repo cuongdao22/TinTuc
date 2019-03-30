@@ -53,6 +53,7 @@
             <div class="col-md-10">
                 @*@Html.ListBoxFor(ViewBag.list,)*@
                 <select name="selectDM" onchange="">
+                    <option value="@Model.DanhMuc1">@Model.TenDM1</option>
                     @foreach (var t in ViewBag.listDM)
                     {
                         <option value="@t.Id">@t.Ten</option>
@@ -85,23 +86,16 @@
         <div class="form-group">
             <label class=" control-label col-md-2">Ảnh hiển thị </label>
             <div class="col-md-10 anh_them_tt">
-                <img id="imgtt" src="~/Upload/image.png" /> <br>
+
+                <img id="imgtt" src="@Model.HienThi1" /> <br>
                 <button type="button" id="selectimg"> Chọn ảnh</button>
             </div>
         </div>
 
-        @if (ViewBag.noidung != "")
-        {
-            <h1>@Html.Raw(ViewBag.noidung)</h1>
-        }
-        <h1>@ViewBag.noidung2</h1>
-
-
-
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Update" class="btn btn-default" />
             </div>
         </div>
     </div>

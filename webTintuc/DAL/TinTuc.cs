@@ -39,7 +39,36 @@ namespace webTintuc.DAL
             rd.Close();
             return list;
         }
-
+        public static Areas.Models.TinTuc selectTT(string matin)
+        {
+            Areas.Models.TinTuc tt = new Areas.Models.TinTuc();
+            SqlCommand cmd = new SqlCommand("sp_select_TinTuc_ID", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@id", matin);
+            openConnect();
+            SqlDataReader rd = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+            while (rd.Read())
+            {
+                
+                tt.Id1 = rd["Id"] is DBNull ? 0 : rd.GetInt32(0);
+                tt.TieuDe1 = rd["TieuDe"] is DBNull ? "" : rd.GetString(1).Trim();
+                tt.Tag1 = rd["Tag"] is DBNull ? "" : rd.GetString(2);
+                tt.NoiDung1 = rd["NoiDung"] is DBNull ? "" : rd.GetString(3).Trim();
+                tt.NgayDang1 = rd["NgayDang"] is DBNull ? d : rd.GetDateTime(4);
+                tt.NgayTao1 = rd["NgayTao"] is DBNull ? d : rd.GetDateTime(5);
+                tt.HienThi1 = rd["HienThi"] is DBNull ? false : rd.GetBoolean(6);
+                tt.TuKhoa1 = rd["TuKhoa"] is DBNull ? "" : rd.GetString(7).Trim();
+                tt.DanhMuc1 = rd["DanhMuc"] is DBNull ? 0 : rd.GetInt32(8);
+                tt.TenDM1 = rd["Ten"] is DBNull ? "" : rd.GetString(9).Trim();
+                tt.Anh1 = rd["Anh"] is DBNull ? "" : rd.GetString(10).Trim();
+                tt.MetaTitle1 = rd["MetaTitle"] is DBNull ? "" : rd.GetString(11).Trim();
+                tt.TacGia1 = rd["tentg"] is DBNull ? "" : rd.GetString(12).Trim();
+                tt.Hot1 = rd["Hot"] is DBNull ? false : rd.GetBoolean(13);
+               
+            }
+            rd.Close();
+            return tt;
+        }
 
         public static void insert(Areas.Models.TinTuc tin)
         {
@@ -57,7 +86,22 @@ namespace webTintuc.DAL
             cmd.ExecuteNonQuery();
             closeConnect();
         }
-
+        public static void update(Areas.Models.TinTuc tin)
+        {
+            openConnect();
+            SqlCommand cmd = new SqlCommand("sp_update_TinTuc", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@TieuDe", tin.TieuDe1.Trim());
+            cmd.Parameters.AddWithValue("@Tag", XuLiChuoi.xoaKhoangTrang(tin.Tag1.Trim()));
+            cmd.Parameters.AddWithValue("@NoiDung", tin.NoiDung1.Trim());
+            cmd.Parameters.AddWithValue("@TuKhoa", XuLiChuoi.xoaKhoangTrang(tin.TuKhoa1.Trim()));
+            cmd.Parameters.AddWithValue("@Anh", tin.Anh1.Trim());
+            cmd.Parameters.AddWithValue("@MetaTitle", XuLiChuoi.xoaKhoangTrang(tin.TieuDe1.Trim()) );
+            cmd.Parameters.AddWithValue("@Id", tin.Id1);
+            cmd.Parameters.AddWithValue("@DanhMuc", tin.DanhMuc1);
+            cmd.ExecuteNonQuery();
+            closeConnect();
+        }
         public static void Admin_update(Areas.Models.TinTuc tin)
         {
             openConnect();

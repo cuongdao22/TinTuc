@@ -149,11 +149,14 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Back\BackAreaRegistration.cs" />
+    <Compile Include="Areas\Back\Controllers\ChuyenMucController.cs" />
     <Compile Include="Areas\Back\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Back\Controllers\TagController.cs" />
     <Compile Include="Areas\Front\Controllers\HomeController.cs" />
     <Compile Include="Areas\Back\Controllers\LoginController.cs" />
     <Compile Include="Areas\Front\FrontAreaRegistration.cs" />
     <Compile Include="Areas\Models\DanhMuc.cs" />
+    <Compile Include="Areas\Models\Tag.cs" />
     <Compile Include="Areas\Models\TinTuc.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -1421,6 +1424,11 @@
     <Content Include="fonts\vendor\bootstrap\css\bootstrap.min.css.map" />
     <Content Include="Areas\Back\Views\Login\Indexx.cshtml" />
     <Content Include="Areas\Back\Views\Home\updateTT.cshtml" />
+    <Content Include="Areas\Back\Views\ChuyenMuc\Index.cshtml" />
+    <Content Include="Areas\Back\Views\ChuyenMuc\Create.cshtml" />
+    <Content Include="Areas\Back\Views\ChuyenMuc\Update.cshtml" />
+    <Content Include="Areas\Back\Views\Tag\Index.cshtml" />
+    <Content Include="Areas\Back\Views\Tag\Create.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\custom.js" />
     <Content Include="Scripts\JavaScript.js" />

@@ -1,21 +1,18 @@
-﻿using System;
+﻿using PagedList;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using PagedList.Mvc;
-using PagedList;
-using System.Text.RegularExpressions;
 
 namespace webTintuc.Areas.Back.Controllers
 {
     public class HomeController : Controller
     {
         // GET: Back/Home
-        
 
 
-        public ActionResult Index(int? page,int ?id)
+
+        public ActionResult Index(int? page, int? id)
         {
 
             if (Session["login"] == null)
@@ -29,8 +26,8 @@ namespace webTintuc.Areas.Back.Controllers
                 List<Areas.Models.TinTuc> list = DAL.TinTuc.selectList();
                 IEnumerable<Areas.Models.TinTuc> l = list.OrderByDescending(x => x.Id1);
                 int pageNumber = (page ?? 1);
-                
-                ViewBag.PortfolioId =  id.ToString();
+
+                ViewBag.PortfolioId = id.ToString();
                 return View(l.ToPagedList(pageNumber, 5));
             }
         }
@@ -61,12 +58,12 @@ namespace webTintuc.Areas.Back.Controllers
                 ViewBag.username = "Tiến Thành";
                 return View();
             }
-           
+
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
-        public ActionResult InsertTT(Areas.Models.TinTuc tt,string selectDM,string url)
+        public ActionResult InsertTT(Areas.Models.TinTuc tt, string selectDM, string url)
         {
             if (Session["login"] == null)
             {
@@ -89,7 +86,7 @@ namespace webTintuc.Areas.Back.Controllers
                 ViewBag.listTag = DAL.Tag.getTag();
                 ViewBag.listDM = DAL.DanhMuc.select(id);
                 return RedirectToAction("Index", "Home");
-                
+
             }
         }
 
@@ -103,13 +100,44 @@ namespace webTintuc.Areas.Back.Controllers
             else
             {
                 string id = Session["login"].ToString();
+                Areas.Models.TinTuc tt = new Models.TinTuc();
+                tt = DAL.TinTuc.selectTT(idTT);
+                tt.Tag1 = tt.Tag1.Trim();
                 ViewBag.listTag = DAL.Tag.getTag();
                 //DAL.TinTuc.checkAdmin(id);
                 ViewBag.listDM = DAL.DanhMuc.select(id);
                 ViewBag.username = "Tiến Thành";
-                return View();
+                return View(tt);
             }
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
+        public ActionResult updateTT(string idTT, Areas.Models.TinTuc tt, string selectDM, string url)
+        {
+            if (Session["login"] == null)
+            {
+                return RedirectToAction("Index", "Login");
+            }
+            else
+            {
+                string id = Session["login"].ToString();
+                // 
+                tt.Id1 = Int32.Parse(idTT);
+                tt.DanhMuc1 = Int32.Parse(selectDM);
+                tt.Anh1 = url;
+                DAL.TinTuc.update(tt);
+                string[] tagg = tt.Tag1.Split(',');
+                //DAL.TinTuc.checkAdmin(id);
+                DAL.Tag.deteleTagtt(tt.Id1.ToString());
+                for (int i = 0; i < tagg.Length; i++)
+                {
+                    DAL.Tag.insert(tagg[i]);                  
+                    DAL.Tag.insertTagtt(tagg[i], tt.Id1.ToString());
+                }
+                return RedirectToAction("Index", "Home");
 
+            }
         }
 
 
