@@ -1448,6 +1448,8 @@
     <Content Include="Areas\Back\Views\NhanVien\Index.cshtml" />
     <Content Include="Areas\Back\Views\NhanVien\InsertNV.cshtml" />
     <Content Include="Areas\Back\Views\NhanVien\Edit.cshtml" />
+    <Content Include="Areas\Back\Views\Duyet\Index.cshtml" />
+    <Content Include="Areas\Front\Views\Home\ChiTiet.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\custom.js" />
     <Content Include="Scripts\JavaScript.js" />
@@ -1482,7 +1484,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Back\Models\" />
     <Folder Include="Areas\Back\Views\DSMod\" />
-    <Folder Include="Areas\Back\Views\Duyet\" />
     <Folder Include="Areas\Front\Models\" />
     <Folder Include="Models\" />
     <Folder Include="Views\Default\" />

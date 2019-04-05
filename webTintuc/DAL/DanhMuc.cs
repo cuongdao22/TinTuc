@@ -70,6 +70,29 @@ namespace webTintuc.DAL
             closeConnect();
             return tt;
         }
+        public static List<Areas.Models.DanhMuc> selectALLDM()
+        {
+            openConnect();
+            List<Areas.Models.DanhMuc> list = new List<Areas.Models.DanhMuc>();
+            
+            SqlCommand cmd = new SqlCommand("select a.id,a.Ten,a.DanhMucCha,b.Ten as 'TenDanhMucCha',a.MetaTitle,a.HienThi from DanhMuc a LEFT JOIN DanhMuc b on b.Id = a.DanhMucCha", con);
+            SqlDataReader rd = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+            while (rd.Read())
+            {
+                Areas.Models.DanhMuc tt = new Areas.Models.DanhMuc();
+                tt.Id = rd["id"] is DBNull ? 0 : rd.GetInt32(0);
+                tt.Ten = rd["Ten"] is DBNull ? "" : rd.GetString(1).Trim();
+                tt.DanhMucCha = rd["DanhMucCha"] is DBNull ? 0 : rd.GetInt32(2);
+                tt.TenDanhMucCha = rd["TenDanhMucCha"] is DBNull ? "Không có" : rd.GetString(3).Trim();
+                tt.MetaTitle = rd["MetaTitle"] is DBNull ? "" : rd.GetString(4).Trim();
+                tt.HienThi = rd["HienThi"] is DBNull ? false : rd.GetBoolean(5);
+                list.Add(tt);
+            }
+            rd.Close();
+            closeConnect();
+            return list;
+        }
+
         public static List<Areas.Models.DanhMuc> select()
         {
             openConnect();

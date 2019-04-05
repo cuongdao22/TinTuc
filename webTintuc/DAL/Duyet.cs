@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -10,7 +11,7 @@ namespace webTintuc.DAL
     {
         static DateTime d = new DateTime(1990, 1, 1);
 
-        public static List<Areas.Models.Duyet> selectList()
+        public static List<Areas.Models.NhanVien> selectList()
         {
             List<Areas.Models.NhanVien> l = new List<Areas.Models.NhanVien>();
             SqlCommand cmd = new SqlCommand("select * from NhanVien", con);
@@ -33,5 +34,24 @@ namespace webTintuc.DAL
             con.Close();
             return l;
         }
+        public static void duyet(string id)
+        {
+            openConnect();
+            SqlCommand cmd = new SqlCommand("sp_update_TinTuc_duyet", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Id", id);
+            cmd.ExecuteNonQuery();
+            closeConnect();
+        }
+        public static void Kduyet(string id)
+        {
+            openConnect();
+            SqlCommand cmd = new SqlCommand("sp_update_TinTuc_Dduyet", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Id", id);
+            cmd.ExecuteNonQuery();
+            closeConnect();
+        }
+
     }
 }

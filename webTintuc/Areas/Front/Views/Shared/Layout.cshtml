@@ -20,7 +20,7 @@
 <body>
 
     <div>
-        <form id="form1" runat="server">
+        
 
             <div class="head">
                 <div class="logo">
@@ -64,6 +64,7 @@
                 </div>
                 <!-- righttttttt  -->
             </div>
+        <div style="clear:both"></div>
             <div class="bottom">
                 <div class="logo logo2">
                     <a href="#"><img class="logo-ico" src="~/Img/logo2.png" /></a>
@@ -77,82 +78,30 @@
 
                 </div>
             </div>
-        </form>
+        
         <div class="menu-bar">
             <div class="menu">
                 <ol class="ol-menu" style="list-style-type:none;display:inline;margin:0px;padding:0px;">
 
-                    <li class="li lii"><i class="fa fa-search iconhome" onclick="chao();"></i></li>
+                     <li class="li lii"><a href="/Front/Home"><i class="fa fa-search iconhome"></i></a></li>
+                    @foreach (var item in ViewBag.listMenu)
+                    {
                     <li class="li">
-                        <a style="margin-left: -18px;" href="#"> XÃ HỘI</a>
+                        <a style="margin-left: -18px;" href="#"> @item.Ten</a>
                         <ul class="sub-menu">
-                            <li><a href="#">THỜI SỰ</a></li>
-                            <li><a href="#">GIAO THÔNG</a></li>
-                            <li><a href="#">MÔI TRƯỜNG-KHÍ HẬU</a></li>
+                            @foreach (var item2 in ViewBag.listMenu)
+                            {
+                                if (item2.DanhMucCha == item.Id)
+                                {
+                                    <li><a href="#">@item2.Ten</a></li>
+                                }
+                            }
                         </ul>
                     </li>
+                    }
 
-                    <li class="li"><a href="#"> THẾ GIỚI</a></li>
-                    <li class="li">
-                        <a href="#"> VĂN HÓA</a>
-                        <ul class="sub-menu">
-                            <li><a href="#">NGHỆ THUẬT</a></li>
-                            <li><a href="#">ẨM THỰC</a></li>
-                            <li><a href="#">DU LỊCH</a></li>
-                        </ul>
-                    </li>
-                    <li class="li">
-                        <a href="#"> KINH TẾ</a>
-                        <ul class="sub-menu">
-                            <li><a href="#">KINH DOANH</a></li>
-                            <li><a href="#">LAO ĐỘNG</a></li>
-                            <li><a href="#">TÀI CHÍNH</a></li>
-                            <li><a href="#">CHỨNG KHOÁN</a></li>
-                        </ul>
-                    </li>
-                    <li class="li">
-                        <a href="#"> GIÁO DỤC</a>
-                        <ul class="sub-menu">
-                            <li><a href="#">HỌC BỔNG-DU HỌC</a></li>
-                            <li><a href="#">ĐÀO TẠO-THI CỬ</a></li>
 
-                        </ul>
-                    </li>
-                    <li class="li">
-                        <a href="#"> THỂ THAO</a>
-                        <ul class="sub-menu">
-                            <li><a href="#">TRONG NƯỚC</a></li>
-                            <li><a href="#">QUỐC TẾ</a></li>
-                        </ul>
-                    </li>
-                    <li class="li">
-                        <a href="#"> GIẢI TRÍ</a>
-                        <ul class="sub-menu">
-                            <li><a href="#">ÂM NHẠC</a></li>
-                            <li><a href="#">THỜI TRANG</a></li>
-                            <li><a href="#">TRUYỀN HÌNH</a></li>
-                        </ul>
-                    </li>
-                    <li class="li">
-                        <a href="#"> PHÁP LUẬT</a>
-                        <ul class="sub-menu">
-                            <li><a href="#">HÌNH SỰ-DÂN SỰ</a></li>
-                            <li><a href="#">AN NINH</a></li>
 
-                        </ul>
-                    </li>
-                    <li class="li">
-                        <a href="#"> CÔNG NGHỆ</a>
-                        <ul class="sub-menu">
-                            <li><a href="#">C</a></li>
-                            <li><a href="#">T</a></li>
-                            <li><a href="#">T</a></li>
-                        </ul>
-                    </li>
-                    <li class="li"><a href="#"> KHOA HỌC</a></li>
-                    <li class="li"><a href="#"> ĐỜI SỐNG</a></li>
-                    <li class="li"><a href="#"> XE CỘ</a></li>
-                    <li class="li"><a href="#"> NHÀ ĐẤT</a></li>
 
                 </ol>
             </div>

@@ -283,7 +283,7 @@ p {
 
 .menu-bar {
     width: 100%;
-    height: 37px;
+    height: 47px;
     background-color: #2FA1B3;
     position: fixed;
     top: 80px;
@@ -320,8 +320,8 @@ p {
 }
 
 li > .sub-menu {
-    top: 40px;
-    left: 0;
+    top: 37px;
+    left: -47px;
 }
 
 .sub-menu li {
@@ -369,7 +369,7 @@ li > .sub-menu {
 }
 
 .iconhome {
-    top: -22.5px;
+    top: -3.5px;
     cursor: pointer;
     background: url('../Img/menu/home1.png') no-repeat;
     background-size: 20px 20px;

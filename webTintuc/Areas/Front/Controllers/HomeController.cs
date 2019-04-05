@@ -11,8 +11,21 @@ namespace webTintuc.Areas.Front.Controllers
         // GET: Front/Home
         public ActionResult Index()
         {
-            
+
+            ViewBag.listMenu = DAL.DanhMuc.selectALLDM();
+            ViewBag.listTT4 = DAL.TinTuc.selectTT4();
             return View();
         }
+        public ActionResult ChiTiet(int id)
+        {
+            ViewBag.listMenu = DAL.DanhMuc.selectALLDM();
+            Areas.Models.TinTuc tt = new Models.TinTuc();
+            tt = DAL.TinTuc.selectTT(id.ToString());
+            return View(tt);
+        }
+
+
+
+
     }
 }

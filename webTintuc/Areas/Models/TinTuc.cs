@@ -21,7 +21,7 @@ namespace webTintuc.Areas.Models
         private string MetaTitle;
         private string TacGia;
         private Boolean Hot;
-       
+        int trangthaiduyet;
         public TinTuc()
         {
 
@@ -58,5 +58,6 @@ namespace webTintuc.Areas.Models
         public string TacGia1 { get => TacGia; set => TacGia = value; }
         public Boolean Hot1 { get => Hot; set => Hot = value; }
         public string TenDM1 { get => TenDM; set => TenDM = value; }
+        public int Trangthaiduyet { get => trangthaiduyet; set => trangthaiduyet = value; }
     }
 }

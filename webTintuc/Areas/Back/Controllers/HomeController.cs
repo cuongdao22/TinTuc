@@ -28,7 +28,7 @@ namespace webTintuc.Areas.Back.Controllers
                 int pageNumber = (page ?? 1);
 
                 ViewBag.PortfolioId = id.ToString();
-                return View(l.ToPagedList(pageNumber, 5));
+                return View(l.ToPagedList(pageNumber, 14));
             }
         }
         [HttpPost]
