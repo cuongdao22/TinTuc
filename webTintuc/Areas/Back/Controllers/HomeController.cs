@@ -51,10 +51,10 @@ namespace webTintuc.Areas.Back.Controllers
             }
             else
             {
-                string id = Session["login"].ToString();
+                string mnv = Session["login"].ToString();
                 ViewBag.listTag = DAL.Tag.getTag();
                 //DAL.TinTuc.checkAdmin(id);
-                ViewBag.listDM = DAL.DanhMuc.select(id);
+                ViewBag.listDM = DAL.DanhMuc.select(mnv);
                 ViewBag.username = "Tiến Thành";
                 return View();
             }
@@ -73,7 +73,8 @@ namespace webTintuc.Areas.Back.Controllers
             {
                 string id = Session["login"].ToString();
                 tt.DanhMuc1 = Int32.Parse(selectDM);
-                tt.Anh1 = url;
+                 tt.Anh1 = url;
+
                 tt.TacGia1 = id;
                 tt.MetaTitle1 = DAL.XuLiChuoi.xoaKhoangTrang(tt.TieuDe1);
                 string[] tagg = tt.Tag1.Split(',');
@@ -113,7 +114,7 @@ namespace webTintuc.Areas.Back.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
-        public ActionResult updateTT(string idTT, Areas.Models.TinTuc tt, string selectDM, string url)
+        public ActionResult updateTT(string idTT, Areas.Models.TinTuc tt, string selectDM, string url )
         {
             if (Session["login"] == null)
             {
@@ -125,7 +126,7 @@ namespace webTintuc.Areas.Back.Controllers
                 // 
                 tt.Id1 = Int32.Parse(idTT);
                 tt.DanhMuc1 = Int32.Parse(selectDM);
-                tt.Anh1 = url;
+                if (!String.IsNullOrWhiteSpace(url)) tt.Anh1 = url;
                 DAL.TinTuc.update(tt);
                 string[] tagg = tt.Tag1.Split(',');
                 //DAL.TinTuc.checkAdmin(id);

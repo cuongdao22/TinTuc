@@ -87,13 +87,13 @@
                     @foreach (var item in ViewBag.listMenu)
                     {
                     <li class="li">
-                        <a style="margin-left: -18px;" href="#"> @item.Ten</a>
+                        <a style="margin-left: -18px;" href="/Front/ChuDe/Index/@item.Id"> @item.Ten</a>
                         <ul class="sub-menu">
                             @foreach (var item2 in ViewBag.listMenu)
                             {
                                 if (item2.DanhMucCha == item.Id)
                                 {
-                                    <li><a href="#">@item2.Ten</a></li>
+                                    <li><a href="/Front/ChuDe/Index/@item2.Id">@item2.Ten</a></li>
                                 }
                             }
                         </ul>

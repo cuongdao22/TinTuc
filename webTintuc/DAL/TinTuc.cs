@@ -104,7 +104,7 @@ namespace webTintuc.DAL
         {
             List<Areas.Models.TinTuc> list = new List<Areas.Models.TinTuc>();
             
-            SqlCommand cmd = new SqlCommand(" select top 4 Id,TieuDe,Tag,NoiDung,NgayDang,TuKhoa,DanhMuc,Anh,MetaTitle from tintuc where HienThi = 1 order by NgayTao", con);
+            SqlCommand cmd = new SqlCommand(" select top 6 Id,TieuDe,Tag,NoiDung,NgayDang,TuKhoa,DanhMuc,Anh,MetaTitle from tintuc where HienThi = 1 order by NgayTao", con);
             openConnect();
             SqlDataReader rd = cmd.ExecuteReader(CommandBehavior.CloseConnection);
             while (rd.Read())
@@ -125,7 +125,60 @@ namespace webTintuc.DAL
             return list;
         }
 
+        public static List<Areas.Models.TinTuc> selectTTDM1()
+        {
+            List<Areas.Models.TinTuc> list = new List<Areas.Models.TinTuc>();
 
+            SqlCommand cmd = new SqlCommand(" select top 5 tintuc.Id,TieuDe,Tag,NoiDung,NgayDang,TuKhoa,DanhMuc,Anh,tintuc.MetaTitle,danhmuc.ten from tintuc,danhmuc where tintuc.HienThi = 1 and DanhMuc = 1 and danhmuc.id = tintuc.danhmuc order by NgayTao", con);
+            openConnect();
+            SqlDataReader rd = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+            while (rd.Read())
+            {
+                Areas.Models.TinTuc tt = new Areas.Models.TinTuc();
+                tt.Id1 = rd["Id"] is DBNull ? 0 : rd.GetInt32(0);
+                tt.TieuDe1 = rd["TieuDe"] is DBNull ? "" : rd.GetString(1).Trim();
+                tt.Tag1 = rd["Tag"] is DBNull ? "" : rd.GetString(2);
+                tt.NoiDung1 = rd["NoiDung"] is DBNull ? "" : rd.GetString(3).Trim();
+                tt.NgayDang1 = rd["NgayDang"] is DBNull ? d : rd.GetDateTime(4);
+                tt.TuKhoa1 = rd["TuKhoa"] is DBNull ? "" : rd.GetString(5).Trim();
+                tt.DanhMuc1 = rd["DanhMuc"] is DBNull ? 0 : rd.GetInt32(6);
+                tt.Anh1 = rd["Anh"] is DBNull ? "" : rd.GetString(7).Trim();
+                tt.MetaTitle1 = rd["MetaTitle"] is DBNull ? "" : rd.GetString(8).Trim();
+                tt.TenDM1 = rd["MetaTitle"] is DBNull ? "" : rd.GetString(9).Trim();
+                
+                list.Add(tt);
+            }
+            rd.Close();
+            return list;
+        }
+        public static List<Areas.Models.TinTuc> selectTTDM(string dm)
+        {
+            List<Areas.Models.TinTuc> list = new List<Areas.Models.TinTuc>();
+
+            SqlCommand cmd = new SqlCommand(" select tintuc.Id,TieuDe,Tag,NoiDung,NgayDang,TuKhoa,DanhMuc,Anh,tintuc.MetaTitle,danhmuc.ten from tintuc,danhmuc where tintuc.HienThi = 1 and DanhMuc = 1 and danhmuc.id = tintuc.danhmuc and tintuc.danhmuc = @danhmuc order by NgayTao", con);
+            cmd.Parameters.AddWithValue("danhmuc", dm);
+            openConnect();
+
+            SqlDataReader rd = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+            while (rd.Read())
+            {
+                Areas.Models.TinTuc tt = new Areas.Models.TinTuc();
+                tt.Id1 = rd["Id"] is DBNull ? 0 : rd.GetInt32(0);
+                tt.TieuDe1 = rd["TieuDe"] is DBNull ? "" : rd.GetString(1).Trim();
+                tt.Tag1 = rd["Tag"] is DBNull ? "" : rd.GetString(2);
+                tt.NoiDung1 = rd["NoiDung"] is DBNull ? "" : rd.GetString(3).Trim();
+                tt.NgayDang1 = rd["NgayDang"] is DBNull ? d : rd.GetDateTime(4);
+                tt.TuKhoa1 = rd["TuKhoa"] is DBNull ? "" : rd.GetString(5).Trim();
+                tt.DanhMuc1 = rd["DanhMuc"] is DBNull ? 0 : rd.GetInt32(6);
+                tt.Anh1 = rd["Anh"] is DBNull ? "" : rd.GetString(7).Trim();
+                tt.MetaTitle1 = rd["MetaTitle"] is DBNull ? "" : rd.GetString(8).Trim();
+                tt.TenDM1 = rd["MetaTitle"] is DBNull ? "" : rd.GetString(9).Trim();
+
+                list.Add(tt);
+            }
+            rd.Close();
+            return list;
+        }
         public static void insert(Areas.Models.TinTuc tin)
         {
             openConnect();
