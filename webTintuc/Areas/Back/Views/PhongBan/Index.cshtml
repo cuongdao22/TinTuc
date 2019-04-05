@@ -1,0 +1,61 @@
+﻿@using PagedList.Mvc;
+@model PagedList.IPagedList<webTintuc.Areas.Models.PhongBan>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Back/Views/Shared/AdminDashBoard.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            STT
+        </th>
+        <th>
+            Tên danh mục
+        </th>
+        <th>
+            ID Quản lí
+        </th>
+        <th>
+            Tên quản lí
+        </th>
+        <th>
+            Email
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdDM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenDM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdQL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenQL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.ActionLink("Danh sách nhân viên", "DSNhanVien", new { idPB = item.Id.ToString() }) |
+                @Html.ActionLink("Sửa", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id.ToString() })
+            </td>
+        </tr>
+    }
+
+</table>
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))

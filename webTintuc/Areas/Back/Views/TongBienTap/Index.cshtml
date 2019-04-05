@@ -1,0 +1,72 @@
+﻿@using PagedList.Mvc;
+@model PagedList.IPagedList<webTintuc.Areas.Models.NhanVien>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Back/Views/Shared/AdminDashBoard.cshtml";
+}
+
+<h2>Danh sách Tổng biên tập</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.Hidden("idPhongBan", (string)ViewBag.idPhongBan)
+    <select name="mnv" id="selectDM">
+        @foreach (var t in ViewBag.listNV)
+        {
+            <option value="@t.Id">@t.Ten --- @t.Email</option>
+        }
+
+
+
+    </select>
+    <input type="submit" value="Thêm nhân viên" />
+}
+<br />
+<table class="table">
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            Tên nhân viên
+        </th>
+
+        <th>
+            Email
+        </th>
+
+
+        <th>
+            Ngày thêm
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ten)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayThem)
+            </td>
+
+            <td>
+                @Html.ActionLink("Xóa khỏi danh sách", "Delete", new { id = item.Id.ToString() }) |
+
+            </td>
+        </tr>
+    }
+
+</table>
+
+@Html.PagedListPager(Model, page => Url.Action("DSNhanVien", new { page }))
+

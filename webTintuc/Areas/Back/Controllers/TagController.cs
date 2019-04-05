@@ -68,7 +68,7 @@ namespace webTintuc.Areas.Back.Controllers
 
         }
 
-        public ActionResult Update()
+        public ActionResult Update(string id)
         {
             Areas.Models.Tag tag = new Models.Tag();
             if (Session["login"] == null)
@@ -77,7 +77,7 @@ namespace webTintuc.Areas.Back.Controllers
             }
             else
             {
-                
+                tag = DAL.Tag.getTag(id);
                 return View(tag);
             }
 
@@ -92,8 +92,9 @@ namespace webTintuc.Areas.Back.Controllers
             }
             else
             {
-
-                return View(tag);
+               
+                DAL.Tag.update(tag.TenTag, tag.Url);
+                return RedirectToAction("Index", "Tag");
             }
 
         }

@@ -2,6 +2,7 @@
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
 }
 .ADbody {
+    padding: 18px;
     background: #fff;
     width: 80%;
     height: 2000px;

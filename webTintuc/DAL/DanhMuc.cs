@@ -28,6 +28,25 @@ namespace webTintuc.DAL
             closeConnect();
             return list;
         }
+        public static List<Areas.Models.DanhMuc> selectDSNV(string id)
+        {
+            openConnect();      
+            List<Areas.Models.DanhMuc> list = new List<Areas.Models.DanhMuc>();
+            SqlCommand cmd = new SqlCommand("sp_select_dm", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@nhanvien", id);
+            SqlDataReader rd = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+            while (rd.Read())
+            {
+                Areas.Models.DanhMuc tt = new Areas.Models.DanhMuc();
+                tt.Id = rd["Id"] is DBNull ? 0 : rd.GetInt32(1);
+                tt.Ten = rd["Ten"] is DBNull ? "" : rd.GetString(0).Trim();
+                list.Add(tt);
+            }
+            rd.Close();
+            closeConnect();
+            return list;
+        }
         public static Areas.Models.DanhMuc selectDM(string idDM)
         {
             openConnect();

@@ -124,10 +124,27 @@
         </form>
         <ul class="nav menu">
             <li class="active"><a href="@Url.Action("Index","Home")"><em class="fa fa-dashboard">&nbsp;</em> Bảng tin</a></li>
-            <li><a href="widgets.html"><em class="fa fa-calendar">&nbsp;</em> Widgets</a></li>
-            <li><a href="charts.html"><em class="fa fa-bar-chart">&nbsp;</em> Charts</a></li>
-            <li><a href="elements.html"><em class="fa fa-toggle-off">&nbsp;</em> UI Elements</a></li>
-            <li><a href="panels.html"><em class="fa fa-clone">&nbsp;</em> Alerts &amp; Panels</a></li>
+            <li><a href="@Url.Action("Index","Duyet")"><em class="fa fa-calendar">&nbsp;</em> Danh sách duyệt</a></li>
+            <li><a href="@Url.Action("Index","NhanVien")"><em class="fa fa-bar-chart">&nbsp;</em>Nhân viên</a></li>
+            
+            <li class="parent ">
+                <a data-toggle="collapse" href="#sub-item-1">
+                    <em class="fa fa-navicon">&nbsp;</em> Danh sách <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
+                </a>
+                <ul class="children collapse" id="sub-item-1">
+                    <li>
+                        <a class="" href="@Url.Action("Index","TongBienTap")">
+                            <span class="fa fa-arrow-right">&nbsp;</span> Tổng Biên tập
+                        </a>
+                    </li>
+                    <li>
+                        <a class="" href="@Url.Action("Index","PhongBan")">
+                            <span class="fa fa-arrow-right">&nbsp;</span> Phòng Ban
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
             <li class="parent ">
                 <a data-toggle="collapse" href="#sub-item-1">
                     <em class="fa fa-navicon">&nbsp;</em> Quản lí tin tức <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
@@ -143,7 +160,7 @@
                             <span class="fa fa-arrow-right">&nbsp;</span> Chuyên mục
                         </a>
                     </li>
-                    
+
                 </ul>
             </li>
             <li><a href="login.html"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
